@@ -17,6 +17,10 @@ printf "$files \n"
 for filename in $files; do
 	relpath="$(realpath --relative-to="$dfdirectory" "$filename")"
 
+	if [ "$(basename filename)" == ".directory" ]; then
+		continue
+	fi
+	
 	if [ -e "${homedirectory}/$relpath" ]; then
 
 		echo "${homedirectory}/$relpath"
