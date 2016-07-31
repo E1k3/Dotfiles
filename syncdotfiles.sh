@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dfdirectory="/home/eike/Documents/Dotfiles/dotfiles/files"
-homedirectory="/home/eike/fakehome"
+homedirectory="/home/eike"
 backupdirectory="/home/eike/Documents/Dotfiles/backup"
 
 [ "$dfdirectory" == "$homedirectory" ] && echo "ERROR: same directory" && exit
