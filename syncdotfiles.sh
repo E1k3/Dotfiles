@@ -1,8 +1,8 @@
 #!/bin/bash
 
-dfdirectory="/home/eike/fakedotfiles"
+dfdirectory="/home/eike/Documents/Dotfiles/dotfiles/files"
 homedirectory="/home/eike/fakehome"
-backupdirectory="/home/eike/fakebackups"
+backupdirectory="/home/eike/Documents/Dotfiles/backup"
 
 [ "$dfdirectory" == "$homedirectory" ] && echo "ERROR: same directory" && exit
 
@@ -28,8 +28,11 @@ for filename in $files; do
 		[ "$1" == "-y" ] || (echo -n "Continue? (n)" && read yn)
 		[ "$yn" == "n" ] && exit
 
+		mkdir -p "$(dirname "${backupdirectory}/$relpath")"
 		mv "${homedirectory}/$relpath" "${backupdirectory}/$relpath"
 	fi
+	
 
+	mkdir -p "$(dirname "${homedirectory}/$relpath")"
 	ln -s "${dfdirectory}/$relpath" "${homedirectory}/$relpath"
 done
