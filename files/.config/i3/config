@@ -138,7 +138,7 @@ bindsym $mod+l exec --no-startup-id systemctl suspend
 bindsym $mod+Shift+l exec --no-startup-id "/home/eike/.config/i3/lockscreen_blackscreen.sh 1"
 
 # shutdown
-bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown now?' -b 'Yes, shutdown' 'shutdown now'"
+bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown now?' -b 'Yes, shutdown' 'systemctl poweroff'"
 
 
 # resize window (you can also use the mouse for that)
