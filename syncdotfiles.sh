@@ -1,8 +1,8 @@
 #!/bin/bash
 
-dfdirectory="files"
-homedirectory="$HOME"
-backupdirectory="$HOME/Dotfiles_backup"
+dfdirectory="$(realpath files)"
+homedirectory="$(realpath $HOME)"
+backupdirectory="$(realpath $HOME/Dotfiles_backup)"
 
 [ "$dfdirectory" == "$homedirectory" ] && echo "ERROR: same directory" && exit
 
