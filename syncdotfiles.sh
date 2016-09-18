@@ -22,7 +22,7 @@ for filename in $files; do
 	fi
 	
 	if [ -e "${homedirectory}/$relpath" ] || [ -L "${homedirectory}/$relpath" ]; then
-		echo "${homedirectory}/$relpath"
+		echo "$(ls -al ${homedirectory}/$relpath)"
 		echo "This file already exists."
 		[ "$1" == "-y" ] || (echo -n "Continue? (*/n)" && read yn)
 		[ "$yn" == "n" ] && exit
