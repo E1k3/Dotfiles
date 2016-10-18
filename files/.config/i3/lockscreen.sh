@@ -9,5 +9,8 @@ if [ $? -ne 0 ]; then
 
 	rm /tmp/screen_locked.png
 
-	i3lock -i /tmp/screen_blurred.png
+	pgrep i3lock > /dev/null
+	if [ $? -ne 0 ]; then
+		i3lock $1 -i /tmp/screen_blurred.png
+	fi
 fi

@@ -22,8 +22,7 @@ set hlsearch
 set wrap
 set textwidth=79
 
-let mapleader=" "
-
+" let mapleader=" "
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -39,6 +38,7 @@ Plugin 'scrooloose/nerdtree'		" File tree
 Plugin 'kien/ctrlp.vim'			" Fuzzy Search
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rdnetto/YCM-Generator'		" Compile flags generator
+Plugin 'chrisbra/SudoEdit.vim'		" Read&Write files with root privileges
 
 " /\ All Plugins have to be added above /\
 call vundle#end()		" required
@@ -68,14 +68,14 @@ let python_highlight_all=1
 syntax on
 
 " Python virtual environment support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-	project_base_dir = os.environ['VIRTUAL_ENV']
-	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+" 	project_base_dir = os.environ['VIRTUAL_ENV']
+" 	activate_this = os.path.join(project_base_dir, 'bin/activate')
+" 	execfile(activate_this, dict(__file__=activate_this))
+" EOF
 
 " Line numbering
 set nu
