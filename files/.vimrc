@@ -14,7 +14,6 @@ set ruler
 set backspace=indent,eol,start
 set relativenumber
 set undofile
-set ignorecase
 set smartcase
 set incsearch
 set showmatch
