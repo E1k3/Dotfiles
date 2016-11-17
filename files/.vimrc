@@ -1,6 +1,7 @@
 set nocompatible		" required
 filetype off			" required
 
+set nu
 set encoding=utf-8
 set laststatus=2
 set scrolloff=3
@@ -10,6 +11,7 @@ set hidden
 set visualbell
 set cursorline
 set ttyfast
+set lazyredraw
 set ruler
 set backspace=indent,eol,start
 set relativenumber
@@ -20,8 +22,10 @@ set incsearch
 set showmatch
 set hlsearch
 set wrap
-set textwidth=79
-
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
 " let mapleader=" "
 
 " set the runtime path to include Vundle and initialize
@@ -77,5 +81,3 @@ syntax on
 " 	execfile(activate_this, dict(__file__=activate_this))
 " EOF
 
-" Line numbering
-set nu

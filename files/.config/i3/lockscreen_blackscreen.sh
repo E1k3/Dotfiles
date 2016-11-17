@@ -6,4 +6,5 @@
 
 sleep $sleeptime
 
-pgrep i3lock > /dev/null && xset dpms force off
+pgrep i3lock > /dev/null
+# && xset dpms force off

@@ -11,6 +11,6 @@ if [ $? -ne 0 ]; then
 
 	pgrep i3lock > /dev/null
 	if [ $? -ne 0 ]; then
-		i3lock $1 -i /tmp/screen_blurred.png
+		i3lock -n -i /tmp/screen_blurred.png
 	fi
 fi

@@ -118,9 +118,16 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # workspace assignments
 assign [class="Firefox"] $workspace2
-assign [class="google-chrome"] $workspace2
+assign [class="Google-chrome"] $workspace2
 assign [class="QtCreator"] $workspace3
+assign [class="processing-app-Base"] $workspace3
+assign [instance="libreoffice"] $workspace4
+assign [title=".*Chat"] $workspace5
+assign [title="Friends"] $workspace5
 assign [class="Audacious"] $workspace10
+
+# set window parameters
+for_window [title="Steam Guard - Computer Authorization Required"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -135,7 +142,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+l exec --no-startup-id systemctl suspend
 
 # lock screen & turn off monitor
-bindsym $mod+Shift+l exec --no-startup-id "/home/eike/.config/i3/lockscreen_blackscreen.sh 1"
+bindsym $mod+Shift+l exec --no-startup-id "/home/eike/.config/i3/locker.sh -o --screenoffsecs 2"
 
 # shutdown
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown now?' -b 'Yes, shutdown' 'systemctl poweroff'"
@@ -204,15 +211,16 @@ bar
 
 
 # Rofi application launcher
-bindsym $mod+d exec rofi -show run -show run -config /home/eike/.config/i3/rofi.conf
+bindsym $mod+d exec rofi -show run -config /home/eike/.config/i3/rofi.conf
 
 # autostart
 # wallpaper
 exec_always --no-startup-id feh --bg-scale /home/eike/Pictures/wallpaper.png
 
 # screen lock
-exec --no-startup-id xautolock -time 10 -locker '~/.config/i3/lockscreen_blackscreen.sh 30' &
-
+exec --no-startup-id xautolock	-detectsleep \
+				-notify 10 -notifier "xset dpms force off" \
+				-time 7 -locker "/home/eike/.config/i3/locker.sh -s --suspendmins 3" 
 # compositor
 exec --no-startup-id compton -f
 
