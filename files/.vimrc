@@ -39,9 +39,10 @@ Plugin 'vim-scripts/indentpython.vim'	" Python autoindent
 Plugin 'Valloric/YouCompleteMe'		" Autocompletion
 Plugin 'scrooloose/nerdtree'		" File tree
 Plugin 'kien/ctrlp.vim'			" Fuzzy Search
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rdnetto/YCM-Generator'		" Compile flags generator
 Plugin 'chrisbra/SudoEdit.vim'		" Read&Write files with root privileges
+Plugin 'itchyny/lightline.vim'		" Light status line plugin
+Plugin 'tpope/vim-fugitive'		" Git status
 
 " /\ All Plugins have to be added above /\
 call vundle#end()		" required
@@ -49,7 +50,7 @@ filetype plugin indent on	" required
 
 " Mark extra whitespaces in Python and C/C++
 highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.cpp,*.hpp nested match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.java,*.py,*.pyw,*.c,*.h,*.cpp,*.hpp nested match BadWhitespace /\s\+$/
 
 " Python PEP8 indentations
 au BufNewFile,BufRead *.py nested
@@ -58,6 +59,12 @@ au BufNewFile,BufRead *.py nested
 	\ set shiftwidth=4 |
 	\ set expandtab |
 	\ set fileformat=unix |
+
+" Lightline settings
+let g:lightline = {
+	\ 'colorscheme' : 'wombat',
+	\ }
+
 
 " Close autocomplete window when finished
 let g:ycm_autoclose_preview_window_after_completion=1

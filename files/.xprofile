@@ -5,5 +5,3 @@ fi
 if [ "grep -q ^flags.*\ hypervisor /proc/cpuinfo" ]; then
     VBoxClient-all
 fi
-
-export TERMINAL="konsole"
