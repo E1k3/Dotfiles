@@ -25,6 +25,8 @@ set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
+set tabstop=4
+set shiftwidth=4
 " let mapleader=" "
 
 " set the runtime path to include Vundle and initialize
@@ -69,6 +71,7 @@ let g:lightline = {
 " Close autocomplete window when finished
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_server_python_interpreter='/usr/bin/python3.5'
+let g:ycm_python_binary_path='/usr/bin/python3.5'
 
 " Map key(s) to goto definition/declaration
 " map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

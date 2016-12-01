@@ -51,7 +51,7 @@ ZSH_THEME="wezm+"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,4 +85,5 @@ alias ls="ls -l --color=auto"
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory autocd nomatch
+
+setopt autocd nomatch

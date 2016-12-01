@@ -24,7 +24,6 @@ URxvt.keysym.Control-Right:  \033[1;5C
 URxvt.font: xft:Droid Sans Mono:size=10
 
 ! colors
-! background + foreground
 URxvt*background: #2f343f
 URxvt*foreground: #f3f4f5
 ! black + darkgrey
