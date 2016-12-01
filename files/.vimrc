@@ -34,21 +34,31 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'		" Vundle plugin manager
+Plugin 'VundleVim/Vundle.vim'			" Vundle plugin manager
 
-Plugin 'tmhedberg/SimpylFold'		" Folding
+Plugin 'tmhedberg/SimpylFold'			" Folding
 Plugin 'vim-scripts/indentpython.vim'	" Python autoindent
-Plugin 'Valloric/YouCompleteMe'		" Autocompletion
-Plugin 'scrooloose/nerdtree'		" File tree
-Plugin 'kien/ctrlp.vim'			" Fuzzy Search
-Plugin 'rdnetto/YCM-Generator'		" Compile flags generator
-Plugin 'chrisbra/SudoEdit.vim'		" Read&Write files with root privileges
-Plugin 'itchyny/lightline.vim'		" Light status line plugin
-Plugin 'tpope/vim-fugitive'		" Git status
+Plugin 'Valloric/YouCompleteMe'			" Autocompletion
+Plugin 'scrooloose/nerdtree'			" File tree
+Plugin 'kien/ctrlp.vim'					" Fuzzy Search
+Plugin 'rdnetto/YCM-Generator'			" Compile flags generator
+Plugin 'chrisbra/SudoEdit.vim'			" Read&Write files with root privileges
+Plugin 'itchyny/lightline.vim'			" Light status line plugin
+Plugin 'tpope/vim-fugitive'				" Git status
+Plugin 'tpope/vim-surround'				" Surround text with tags&braces
+Plugin 'tpope/vim-repeat'				" Repeat support for plugin commands
 
 " /\ All Plugins have to be added above /\
 call vundle#end()		" required
 filetype plugin indent on	" required
+
+" Brace closing mappings
+inoremap ( ()<Esc>i
+inoremap < <><Esc>i
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
+inoremap " ""<Esc>i
+inoremap ' ''<Esc>i
 
 " Mark extra whitespaces in Python and C/C++
 highlight BadWhitespace ctermbg=red guibg=darkred
@@ -67,7 +77,6 @@ let g:lightline = {
 	\ 'colorscheme' : 'wombat',
 	\ }
 
-
 " Close autocomplete window when finished
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_server_python_interpreter='/usr/bin/python3.5'
@@ -79,14 +88,4 @@ let g:ycm_python_binary_path='/usr/bin/python3.5'
 " Python highlighting
 let python_highlight_all=1
 syntax on
-
-" Python virtual environment support
-" py << EOF
-" import os
-" import sys
-" if 'VIRTUAL_ENV' in os.environ:
-" 	project_base_dir = os.environ['VIRTUAL_ENV']
-" 	activate_this = os.path.join(project_base_dir, 'bin/activate')
-" 	execfile(activate_this, dict(__file__=activate_this))
-" EOF
 
