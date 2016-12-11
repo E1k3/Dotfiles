@@ -27,7 +27,9 @@ set textwidth=0
 set wrapmargin=0
 set tabstop=4
 set shiftwidth=4
-" let mapleader=" "
+set showcmd
+syntax on
+let mapleader="\\"
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,10 +49,14 @@ Plugin 'itchyny/lightline.vim'			" Light status line plugin
 Plugin 'tpope/vim-fugitive'				" Git status
 Plugin 'tpope/vim-surround'				" Surround text with tags&braces
 Plugin 'tpope/vim-repeat'				" Repeat support for plugin commands
+Plugin 'vimwiki/vimwiki'				" Wiki
 
 " /\ All Plugins have to be added above /\
 call vundle#end()		" required
 filetype plugin indent on	" required
+
+" <Space> Leader binding
+map <Space> <Leader>
 
 " Brace closing mappings
 inoremap ( ()<Esc>i
@@ -87,5 +93,4 @@ let g:ycm_python_binary_path='/usr/bin/python3.5'
 
 " Python highlighting
 let python_highlight_all=1
-syntax on
 

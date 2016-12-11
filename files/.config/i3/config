@@ -121,6 +121,7 @@ assign [class="Firefox"] $workspace2
 assign [class="Google-chrome"] $workspace2
 assign [class="QtCreator"] $workspace3
 assign [class="processing-app-Base"] $workspace3
+assign [class="jetbrains-idea-ce"] $workspace3
 assign [instance="libreoffice"] $workspace4
 assign [title=".*Chat"] $workspace5
 assign [title="Friends"] $workspace5
@@ -139,7 +140,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen & suspend
-bindsym $mod+l exec --no-startup-id systemctl suspend
+bindsym $mod+l exec --no-startup-id "/home/eike/.config/i3/locker.sh -o -s --suspendmins 0"
 
 # lock screen & turn off monitor
 bindsym $mod+Shift+l exec --no-startup-id "/home/eike/.config/i3/locker.sh -o --screenoffsecs 2"
