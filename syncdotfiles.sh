@@ -2,7 +2,7 @@
 
 dfdirectory="$(realpath files)"
 homedirectory="$(realpath $HOME)"
-backupdirectory="$(realpath ../backup)"
+backupdirectory="$(realpath ../backup_dotfiles)"
 
 [ "$dfdirectory" == "$homedirectory" ] && echo "ERROR: same directory" && exit
 
