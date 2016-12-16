@@ -59,12 +59,26 @@ filetype plugin indent on	" required
 map <Space> <Leader>
 
 " Brace closing mappings
-inoremap ( ()<Esc>i
-inoremap < <><Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
+inoremap ( ()<Left>
+inoremap < <><Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+
+inoremap () ()
+inoremap <> <>
+inoremap {} {}
+inoremap [] []
+inoremap "" ""
+inoremap '' ''
+
+inoremap (<BS> <Nop>
+inoremap <<BS> <Nop>
+inoremap {<BS> <Nop>
+inoremap [<BS> <Nop>
+inoremap "<BS> <Nop>
+inoremap '<BS> <Nop>
 
 " Mark extra whitespaces in Python and C/C++
 highlight BadWhitespace ctermbg=red guibg=darkred
