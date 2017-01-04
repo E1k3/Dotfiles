@@ -1,36 +1,6 @@
 set nocompatible		" required
 filetype off			" required
 
-set nu
-set encoding=utf-8
-set laststatus=2
-set scrolloff=3
-set autoindent
-set showmode
-set hidden
-set visualbell
-set cursorline
-set ttyfast
-set lazyredraw
-set ruler
-set backspace=indent,eol,start
-set relativenumber
-set undofile
-set smartcase
-set incsearch
-set showmatch
-set hlsearch
-set wrap
-set linebreak
-set nolist
-set textwidth=0
-set wrapmargin=0
-set tabstop=4
-set shiftwidth=4
-set showcmd
-syntax on
-let mapleader="\\"
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -53,7 +23,45 @@ Plugin 'vimwiki/vimwiki'				" Wiki
 
 " /\ All Plugins have to be added above /\
 call vundle#end()		" required
-filetype plugin indent on	" required
+
+filetype plugin indent on
+syntax on
+
+set encoding=utf-8
+set ttyfast
+set lazyredraw
+
+set nu
+set cursorline
+set ruler
+set relativenumber
+set laststatus=2
+set scrolloff=3
+set showmode
+set hidden
+
+set visualbell
+set backspace=indent,eol,start
+set undofile
+set nolist
+
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
+set textwidth=0
+set wrapmargin=0
+set wrap
+set linebreak
+
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set showcmd
+
+let mapleader="\\"
+
 
 " <Space> Leader binding
 map <Space> <Leader>

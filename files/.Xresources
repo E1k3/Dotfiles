@@ -1,3 +1,6 @@
+! set correct terminaltype
+URxvt*termName: rxvt-unicode-256color
+
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
 

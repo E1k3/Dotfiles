@@ -123,8 +123,9 @@ assign [class="QtCreator"] $workspace3
 assign [class="processing-app-Base"] $workspace3
 assign [class="jetbrains-idea-ce"] $workspace3
 assign [instance="libreoffice"] $workspace4
-assign [title=".*Chat"] $workspace5
-assign [title="Friends"] $workspace5
+assign [class="Steam" title=".*Chat"] $workspace5
+assign [class="Steam" title="Friends"] $workspace5
+assign [class="Steam" title="Steam"] $workspace6
 assign [class="Audacious"] $workspace10
 
 # set window parameters
@@ -221,7 +222,7 @@ exec_always --no-startup-id feh --bg-scale /home/eike/Pictures/wallpaper.png
 # screen lock
 exec --no-startup-id xautolock	-detectsleep \
 				-notify 10 -notifier "xset dpms force off" \
-				-time 7 -locker "/home/eike/.config/i3/locker.sh -s --suspendmins 3" 
+				-time 20 -locker "/home/eike/.config/i3/locker.sh -s --suspendmins 3" 
 # compositor
 exec --no-startup-id compton -f
 

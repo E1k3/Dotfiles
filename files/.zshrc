@@ -64,7 +64,6 @@ source $ZSH/oh-my-zsh.sh
 
 export VISUAL='vim'
 export EDITOR='vim'
-export TERM=xterm-256color
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -81,6 +80,7 @@ export TERM=xterm-256color
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -l --color=auto"
+alias netctl="netctl-auto"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
