@@ -81,6 +81,7 @@ export EDITOR='vim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -l --color=auto"
 alias netctl="netctl-auto"
+alias sudoedit="sudoedit -E"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
