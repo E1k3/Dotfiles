@@ -1,0 +1,22 @@
+[Added Associations]
+text/x-arduino=arduino.desktop;
+text/plain=vim.desktop;
+application/x-shellscript=vim.desktop;
+text/x-python=vim.desktop;
+text/x-java=vim.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+application/xml=vim.desktop;firefox.desktop;
+application/x-yaml=vim.desktop;
+application/pdf=qpdfview.desktop;
+text/html=firefox.desktop;
+application/zip=org.gnome.FileRoller.desktop
+
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-40RMPY.desktop
+message/rfc822=userapp-Thunderbird-40RMPY.desktop
+application/xml=vim.desktop
+text/plain=vim.desktop
+text/html=firefox.desktop
+inode/directory=Thunar.desktop
+x-directory/normal=Thunar.desktop
