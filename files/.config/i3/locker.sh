@@ -69,6 +69,6 @@ fi
 
 #suspend
 if ($SUSPEND); then
-	sleep "$[${SUSPENDMINS} * 60]"
+	sleep "$[1 + ${SUSPENDMINS} * 60]"
 	pgrep i3lock > /dev/null && systemctl suspend
 fi

@@ -20,6 +20,7 @@ Plugin 'tpope/vim-fugitive'				" Git status
 Plugin 'tpope/vim-surround'				" Surround text with tags&braces
 Plugin 'tpope/vim-repeat'				" Repeat support for plugin commands
 Plugin 'vimwiki/vimwiki'				" Wiki
+Plugin 'neovimhaskell/haskell-vim'		" Haskell highlighting
 
 " /\ All Plugins have to be added above /\
 call vundle#end()		" required
@@ -93,7 +94,7 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.java,*.py,*.pyw,*.c,*.h,*.cpp,*.hpp nested match BadWhitespace /\s\+$/
 
 " Python PEP8 indentations
-au BufNewFile,BufRead *.py nested
+au BufNewFile,BufRead *.py,*.hs nested
 	\ set tabstop=4 |
 	\ set softtabstop=4 |
 	\ set shiftwidth=4 |
@@ -107,7 +108,7 @@ let g:lightline = {
 
 " Close autocomplete window when finished
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_server_python_interpreter='/usr/bin/python3.5'
+let g:ycm_server_python_interpreter='/usr/bin/python3'
 let g:ycm_python_binary_path='/usr/bin/python3.5'
 
 " Map key(s) to goto definition/declaration
