@@ -82,6 +82,7 @@ export EDITOR='vim'
 alias ls="ls -l --color=auto"
 alias netctl="netctl-auto"
 alias sudoedit="sudoedit -E"
+alias vim="nvim"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000

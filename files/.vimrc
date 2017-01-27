@@ -89,6 +89,13 @@ inoremap [<BS> <Nop>
 inoremap "<BS> <Nop>
 inoremap '<BS> <Nop>
 
+inoremap (<CR> (<CR>
+inoremap <<CR> <<CR>
+inoremap {<CR> {<CR>
+inoremap [<CR> [<CR>
+inoremap "<CR> "<CR>
+inoremap '<CR> '<CR>
+
 " Mark extra whitespaces in Python and C/C++
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.java,*.py,*.pyw,*.c,*.h,*.cpp,*.hpp nested match BadWhitespace /\s\+$/
