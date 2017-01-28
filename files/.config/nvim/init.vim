@@ -34,6 +34,9 @@ Plug 'zchee/deoplete-clang'
 " Python completion
 Plug 'zchee/deoplete-jedi'
 
+" Visual undo tree
+Plug 'mbbill/undotree'
+
 
 call plug#end()
 
@@ -79,8 +82,15 @@ set shiftwidth=4
 let mapleader="\\"
 map <Space> <Leader>
 
+" Navigate through completion candidates using Tab
 imap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 imap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
+
+" Surround bindings
+nnoremap <Leader>s ysiw
+
+" Undo tree toggle
+nnoremap <Leader>rr :UndotreeToggle<CR>
 
 " Set lightline color scheme
 let g:lightline = { 'colorscheme' : 'wombat' }
