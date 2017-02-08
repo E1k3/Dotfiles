@@ -44,7 +44,7 @@ Plug 'mbbill/undotree'
 Plug 'chrisbra/Colorizer'
 
 " Theme
-Plug 'rhriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
