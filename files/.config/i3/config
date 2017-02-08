@@ -89,7 +89,7 @@ set $workspace5 "5: "
 set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
-set $workspace9 "9: "
+set $workspace9 "9: "
 set $workspace10 "10: "
 
 # switch to workspace
@@ -126,6 +126,7 @@ assign [instance="libreoffice"] $workspace4
 assign [class="Steam" title=".*Chat"] $workspace5
 assign [class="Steam" title="Friends"] $workspace5
 assign [class="Steam" title="Steam"] $workspace6
+assign [class="Thunderbird"] $workspace9
 assign [class="Audacious"] $workspace10
 
 # set window parameters
@@ -228,4 +229,5 @@ exec --no-startup-id compton -f
 
 # applications
 exec audacious
+exec thunderbird
 

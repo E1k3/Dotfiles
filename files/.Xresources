@@ -25,31 +25,8 @@ URxvt.keysym.Control-Right:  \033[1;5C
 
 ! font
 URxvt.font: xft:Droid Sans Mono:size=10
+#define base00 #2d2d2d
+#define base05 #d3d0c8
 
-! colors
-URxvt*background: #2f343f
-URxvt*foreground: #f3f4f5
-! black + darkgrey
-URxvt*color0:  #000000
-URxvt*color8:  #555753
-! darkred + red
-URxvt*color1:  #ff6565
-URxvt*color9:  #ff8d8d
-! darkgreen + green
-URxvt*color2:  #93d44f
-URxvt*color10: #c8e7a8
-! darkyellow + yellow
-URxvt*color3:  #eab93d
-URxvt*color11: #ffc123
-! darkblue + blue
-URxvt*color4:  #204a87
-URxvt*color12: #3465a4
-! darkmagenta + magenta
-URxvt*color5:  #ce5c00
-URxvt*color13: #f57900
-!darkcyan + cyan (both not tango)
-URxvt*color6:  #89b6e2
-URxvt*color14: #46a4ff
-! lightGrey + white
-URxvt*color7:  #cccccc
-URxvt*color15: #ffffff
+*.foreground:   base05
+*.background:   base00
