@@ -59,8 +59,9 @@ endif
 
 syntax on
 
-set directory=~/.cache/neovim,.
 set encoding=utf-8
+set hidden
+set directory=~/.cache/neovim,.
 
 set path+=**
 set ignorecase
