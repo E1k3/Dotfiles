@@ -100,10 +100,7 @@ imap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 autocmd CompleteDone * pclose!
 
 " German keyboard layout utility maps
-map ö [
-map ä ]
-map Ö {
-map Ä }
+nnoremap <Leader>t <c-]>
 
 " Clipboard maps
 nnoremap <Leader>p "+p
