@@ -62,6 +62,13 @@ syntax on
 set directory=~/.cache/neovim,.
 set encoding=utf-8
 
+set path+=**
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
 set nu
 set cursorline
 set ruler
@@ -75,12 +82,6 @@ set visualbell
 set backspace=indent,eol,start
 set undofile
 set nolist
-
-set ignorecase
-set smartcase
-set incsearch
-set showmatch
-set hlsearch
 
 set textwidth=0
 set wrapmargin=0
