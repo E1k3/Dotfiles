@@ -76,6 +76,7 @@ set backspace=indent,eol,start
 set undofile
 set nolist
 
+set ignorecase
 set smartcase
 set incsearch
 set showmatch
