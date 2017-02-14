@@ -46,6 +46,9 @@ Plug 'chrisbra/Colorizer'
 " Theme
 Plug 'chriskempson/base16-vim'
 
+" Lightline theme
+Plug 'daviesjamie/vim-base16-lightline'
+
 call plug#end()
 
 set nocompatible
@@ -103,7 +106,10 @@ imap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 autocmd CompleteDone * pclose!
 
 " German keyboard layout utility maps
-nnoremap <Leader>t <c-]>
+nnoremap ö [
+nnoremap ä ]
+nnoremap Ö <c-[>
+nnoremap Ä <c-]>
 
 " Clipboard maps
 nnoremap <Leader>p "+p
@@ -118,7 +124,7 @@ nnoremap <Leader>rr :UndotreeToggle<CR>
 nnoremap <Leader>c :ColorToggle<CR>
 
 " Set lightline color scheme
-let g:lightline = { 'colorscheme' : 'wombat' }
+let g:lightline = { 'colorscheme' : 'base16' }
 
 " Enable deoplete completion
 let g:deoplete#enable_at_startup = 1

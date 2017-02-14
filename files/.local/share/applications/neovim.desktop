@@ -3,5 +3,5 @@ Encoding=UTF-8
 Type=Application
 NoDisplay=true
 Name=neovim
-Exec=/usr/bin/urxvt -e /usr/bin/nvim
+Exec=/usr/bin/urxvt -e 'zsh -c /usr/bin/nvim'
 
