@@ -1,6 +1,4 @@
-if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
-    export QT_QPA_PLATFORMTHEME="qt5ct"
-fi
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 if [ "grep -q ^flags.*\ hypervisor /proc/cpuinfo" ]; then
     VBoxClient-all
