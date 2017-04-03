@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 
 export VISUAL='nvim'
 export EDITOR='nvim'
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
