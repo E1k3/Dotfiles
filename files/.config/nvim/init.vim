@@ -76,7 +76,6 @@ set hlsearch
 set nu
 set cursorline
 set ruler
-set relativenumber
 set laststatus=2
 set scrolloff=3
 set showmode
@@ -113,6 +112,8 @@ nnoremap Ä <c-]>
 
 " Clipboard maps
 nnoremap <Leader>p "+p
+vnoremap <Leader>y "+y
+nnoremap <Leader>yy "+yy
 
 " Surround maps
 nnoremap <Leader>s ysiw

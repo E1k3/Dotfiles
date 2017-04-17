@@ -84,6 +84,7 @@ alias ls="ls -l --color=auto"
 alias netctl="netctl-auto"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"
+alias sudovim="sudo -E nvim"
 
 # Base16 Colorscheme
 BASE16_SHELL=$HOME/.config/base16-shell/
