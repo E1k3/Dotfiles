@@ -208,7 +208,7 @@ bar
                 background $bg_color
                 statusline $text_color
         }
-
+		tray_output primary
         font pango: Droid Sans Mono, FontAwesome 10
 }
 
