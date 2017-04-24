@@ -217,17 +217,17 @@ bar
 }
 
 
-# Rofi application launcher
-bindsym $mod+d exec rofi -show run -config /home/eike/.config/i3/rofi.conf
+# rofi application launcher
+bindsym $mod+d exec rofi -show run -config $HOME/.config/i3/rofi.conf
 
 # autostart
 # wallpaper
-exec_always --no-startup-id feh --bg-scale /home/eike/Pictures/wallpaper.png
+exec_always --no-startup-id feh --bg-scale $( xdg-user-dir PICTURES )/wallpaper.png
 
 # screen lock
 exec --no-startup-id xautolock	-detectsleep \
 				-notify 10 -notifier "xset dpms force off" \
-				-time 20 -locker "/home/eike/.config/i3/locker.sh -s --suspendmins 3" 
+				-time 20 -locker "$HOME/.config/i3/locker.sh -s --suspendmins 3" 
 # compositor
 exec --no-startup-id compton -f
 
