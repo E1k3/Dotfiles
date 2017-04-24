@@ -36,6 +36,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# move focues workspace to output
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -91,6 +95,14 @@ set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace10 "10: "
+
+# assign workspace to output
+workspace $workspace1 output DisplayPort-0
+workspace $workspace2 output DisplayPort-0
+workspace $workspace3 output DisplayPort-0
+workspace $workspace4 output DisplayPort-0
+workspace $workspace7 output DisplayPort-0
+workspace $workspace8 output DisplayPort-0
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
