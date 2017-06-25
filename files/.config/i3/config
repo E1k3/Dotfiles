@@ -227,7 +227,7 @@ exec_always --no-startup-id feh --bg-scale $( xdg-user-dir PICTURES )/wallpaper.
 # screen lock
 exec --no-startup-id xautolock	-detectsleep \
 				-notify 10 -notifier "xset dpms force off" \
-				-time 10 -locker "$HOME/.config/i3/locker.sh -s --suspendmins 0" 
+				-time 20 -locker "$HOME/.config/i3/locker.sh -s --suspendmins 3" 
 # compositor
 exec --no-startup-id compton -f
 
