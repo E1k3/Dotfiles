@@ -154,6 +154,8 @@ bindsym $mod+Shift+l exec --no-startup-id "/home/eike/.config/i3/locker.sh -o --
 # shutdown
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown now?' -b 'Yes, shutdown' 'systemctl poweroff' -b 'Yes, reboot' 'systemctl reboot'"
 
+# capture screenshot
+bindsym $mod+c exec --no-startup-id scrot -u "$HOME/screenshot-$( date +"%F_%R-%N" ).png"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
