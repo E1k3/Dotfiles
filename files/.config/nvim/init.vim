@@ -57,14 +57,14 @@ filetype plugin indent on
 " Colorscheme
 if filereadable(expand("~/.vimrc_background"))
 	let base16colorspace=256
-	source ~/.vimrc_background
+	source $HOME/.vimrc_background
 endif
 
 syntax on
 
 set encoding=utf-8
 set hidden
-set directory=~/.cache/neovim,.
+set directory=$HOME/.cache/neovim,.
 
 set path+=**
 set ignorecase
