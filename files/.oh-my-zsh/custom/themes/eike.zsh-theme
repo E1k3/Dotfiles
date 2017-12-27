@@ -5,19 +5,26 @@ function remote_session
 	fi
 }
 
-function pwd_or_repo
+function where_am_i
 {
+	local ref
+	# Is pwd in git repo?
 	if [[ -n $(git_prompt_info) ]]; then
-		echo %{$fg_bold[green]%}$(basename `git remote get-url origin`)%{$reset_color%}:$(git_prompt_info)
+		ref="%{$fg_bold[green]%}$(basename `git remote get-url origin 2>/dev/null` 2>/dev/null)%{$reset_color%}"
+		local ret=$?
+		if [[ $ret != 0 ]]; then
+			ref="%{$fg_bold[red]%}$(basename `git rev-parse --show-toplevel`)%{$reset_color%}"
+		fi
+
+		ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}$(git_current_branch)%{$reset_color%}"
+		ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}$(git_current_branch)%{$reset_color%}"
+		# Print repo:branch with colorcoding for existing remote origin and git status
+		ref="${ref}:$(parse_git_dirty) "
 	else
-		echo "%~ "
+		ref="%~ "
 	fi
+
+	echo $ref
 }
 
-PROMPT='%{$fg[black]%}$(pwd_or_repo)%{$reset_color%}%{${fg_bold[black]}%}$(remote_session)> %{$reset_color%}'
-RPROMPT=''
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[red]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN=" "
+PROMPT='$(where_am_i)%{${fg_bold[black]}%}$(remote_session)> %{$reset_color%}'
