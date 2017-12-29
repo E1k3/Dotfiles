@@ -1,7 +1,7 @@
 function remote_session
 {
 	if [[ -n $SSH_CLIENT ]]; then
-		echo '%n@%m '
+		echo "%{$fg_bold[black]%}%n@%m %{$reset_color%}"
 	fi
 }
 
@@ -27,4 +27,4 @@ function where_am_i
 	echo $ref
 }
 
-PROMPT='$(where_am_i)%{${fg_bold[black]}%}$(remote_session)> %{$reset_color%}'
+PROMPT='$(remote_session)$(where_am_i)> '
