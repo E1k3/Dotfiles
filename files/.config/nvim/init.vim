@@ -43,23 +43,25 @@ Plug 'mbbill/undotree'
 " Color highlighting
 Plug 'chrisbra/Colorizer'
 
-" Theme
-Plug 'chriskempson/base16-vim'
-
-" Lightline theme
-Plug 'daviesjamie/vim-base16-lightline'
+" Colorscheme gruvbox
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 set nocompatible
 filetype plugin indent on
 
-" Colorscheme
-if filereadable(expand("~/.vimrc_background"))
-	let base16colorspace=256
-	source $HOME/.vimrc_background
-endif
 set background=light 
+set termguicolors
+
+colorscheme gruvbox
+let g:gruvbox_bold='1'
+let g:gruvbox_italic='1'
+let g:gruvbox_underline='1'
+let g:gruvbox_undercurl='1'
+let g:gruvbox_contrast_light='hard'
+
+let g:lightline = { 'colorscheme' : 'gruvbox' }
 
 syntax on
 
@@ -125,9 +127,6 @@ nnoremap <Leader>rr :UndotreeToggle<CR>
 
 " RGB highlighting 
 nnoremap <Leader>c :ColorToggle<CR>
-
-" Set lightline color scheme
-let g:lightline = { 'colorscheme' : 'base16' }
 
 " Enable deoplete completion
 let g:deoplete#enable_at_startup = 1

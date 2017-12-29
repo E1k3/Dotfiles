@@ -1,5 +1,5 @@
 ! set correct terminaltype
-URxvt*termName: rxvt-unicode-256color
+! URxvt*termName: rxvt-unicode-256color
 
 ! do not scroll with output
 URxvt*scrollTtyOutput: false
@@ -24,7 +24,7 @@ URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right:  \033[1;5C
 
 ! font
-URxvt.font: xft:Droid Sans Mono:size=10
+URxvt.font: xft:DejaVu Sans Mono:size=12
 
 ! *.foreground:   #0c0d0e
 ! *.background:   #fcfdfe
