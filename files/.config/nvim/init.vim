@@ -67,7 +67,7 @@ syntax on
 
 set encoding=utf-8
 set hidden
-set directory=~/.cache/neovim,.
+set directory=$HOME/.cache/neovim,.
 
 set path+=**
 set ignorecase
@@ -116,6 +116,7 @@ nnoremap Ä <c-]>
 " Clipboard maps
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
+vnoremap <Leader>p "+p
 nnoremap <Leader>yy "+yy
 
 " Surround maps
