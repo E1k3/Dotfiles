@@ -114,6 +114,7 @@ nnoremap Ä <c-]>
 " Clipboard maps
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
+vnoremap <Leader>p "+p
 nnoremap <Leader>yy "+yy
 
 " Surround maps
