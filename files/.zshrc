@@ -85,6 +85,7 @@ alias netctl="netctl-auto"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"
 alias sudovim="sudo -E nvim"
+cdgit() { cd `git rev-parse --show-toplevel`; }
 
 # Vim colorscheme correction
 # source ~/.config/nvim/plugins/gruvbox/gruvbox_256palette.sh
