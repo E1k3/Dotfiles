@@ -35,5 +35,5 @@ function where_am_i
 	echo $ref
 }
 
-PROMPT='[$(remote_session)$(where_am_i)]> '
-RPROMPT='%{$fg_bold[red]%}%(?..[%?])%{$reset_color%}'
+PROMPT='[$(remote_session)$(where_am_i)] '
+RPROMPT='%{$fg[red]%}%(?..[%?])%{$reset_color%}'
