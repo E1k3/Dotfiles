@@ -26,14 +26,14 @@ function where_am_i
 		if [[ $relative_pwd != "." ]]; then
 			ref="${ref}/$relative_pwd "
 		else
-			ref="${ref} "
+			ref="${ref}"
 		fi
 	else
-		ref="%~ "
+		ref="%~"
 	fi
 
 	echo $ref
 }
 
-PROMPT='$(remote_session)$(where_am_i)> '
-RPROMPT='%{$fg_bold[red]%}%(?..[%?])%{$reset_color%}'
+PROMPT='[$(remote_session)$(where_am_i)] '
+RPROMPT='%{$fg[red]%}%(?..[%?])%{$reset_color%}'
