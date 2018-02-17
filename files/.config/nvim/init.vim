@@ -75,6 +75,7 @@ set smartcase
 set incsearch
 set showmatch
 set hlsearch
+set inccommand=nosplit
 
 set nu
 set cursorline
@@ -101,11 +102,10 @@ set shiftwidth=4
 let mapleader="\\"
 map <Space> <Leader>
 
-" Navigate through completion candidates using Tab
-imap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-imap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 " Close preview split when completion is done
 autocmd CompleteDone * pclose!
+" If completions matches word, close popup AND add newline
+inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup()."\<CR>" : "\<CR>"
 
 " German keyboard layout utility maps
 nnoremap ö [
