@@ -123,14 +123,21 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # workspace assignments
 assign [class="Firefox"] $workspace2
 assign [class="Google-chrome"] $workspace2
+
 assign [class="QtCreator"] $workspace3
 assign [class="processing-app-Base"] $workspace3
 assign [class="jetbrains-idea-ce"] $workspace3
+assign [class="Eclipse"] $workspace3
+assign [title="Eclipse"] $workspace3
+
 assign [instance="libreoffice"] $workspace4
+
 assign [class="Steam" title=".*Chat"] $workspace5
 assign [class="Steam" title="Friends"] $workspace5
 assign [class="Steam" title="Steam"] $workspace6
+
 assign [class="Thunderbird"] $workspace9
+
 assign [class="Audacious"] $workspace10
 
 # set window parameters
