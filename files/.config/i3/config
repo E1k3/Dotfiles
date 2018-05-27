@@ -240,6 +240,7 @@ exec --no-startup-id xautolock	-detectsleep \
 exec --no-startup-id compton
 
 # applications
+exec firefox
 exec audacious
 exec thunderbird
 

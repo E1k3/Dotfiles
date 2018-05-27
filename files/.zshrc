@@ -80,7 +80,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="ls -l --color=auto"
+alias ls="ls -l -H --color=auto"
 alias netctl="netctl-auto"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"

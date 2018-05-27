@@ -12,8 +12,6 @@ Plug 'Shougo/deoplete-clangx'
 Plug 'zchee/deoplete-jedi'
 
 " Highlighting and code style
-" C++ syntax highlighting
-Plug 'octol/vim-cpp-enhanced-highlight'
 " GLSL syntax highlighting
 Plug 'tikhomirov/vim-glsl'
 " Haskell syntax highlighting
@@ -68,6 +66,7 @@ set directory=$HOME/.cache/neovim,.
 
 set path+=**
 set ignorecase
+set smartcase
 set incsearch
 set showmatch
 set hlsearch
