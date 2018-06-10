@@ -34,6 +34,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 " '.' Repeat support for plugin commands
 Plug 'tpope/vim-repeat'
+" Faster navigation (like f/t but with 2 characters)
+Plug 'justinmk/vim-sneak'
 " Wiki & Journal
 Plug 'vimwiki/vimwiki'
 " Visual undo tree
