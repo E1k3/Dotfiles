@@ -24,7 +24,7 @@ function where_am_i
 		# Print repo:branch with colorcoding for existing remote origin and git status
 		ref="${ref}:$(parse_git_dirty)"
 		if [[ $relative_pwd != "." ]]; then
-			ref="${ref}/$relative_pwd "
+			ref="${ref}/$relative_pwd"
 		else
 			ref="${ref}"
 		fi
