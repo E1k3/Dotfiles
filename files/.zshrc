@@ -85,6 +85,7 @@ alias netctl="netctl-auto"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"
 alias sudovim="sudo -E nvim"
+alias info="info --vi-keys"
 cdgit() { cd `git rev-parse --show-toplevel`; }
 
 # Vim colorscheme correction
