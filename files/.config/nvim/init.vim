@@ -2,14 +2,11 @@
 call plug#begin('~/.config/nvim/plugins')
 
 " Completion
-" Completion framework
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Deoplete includes
-Plug 'Shougo/neoinclude.vim'
-" C/C++ completion source
-Plug 'Shougo/deoplete-clangx'
-" Python completion source
-Plug 'zchee/deoplete-jedi'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" LSP client
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 
 " Highlighting and code style
 " GLSL syntax highlighting
@@ -73,6 +70,7 @@ set incsearch
 set showmatch
 set hlsearch
 set inccommand=nosplit
+set completeopt+=preview
 
 set nu
 set cursorline
@@ -111,8 +109,25 @@ nnoremap <Leader>rr :UndotreeToggle<CR>
 " RGB highlighting 
 nnoremap <Leader>c :ColorToggle<CR>
 
-" Enable deoplete completion
-let g:deoplete#enable_at_startup = 1
+" Asyncomplete config
+let g:asyncomplete_smart_completion = 1
+let g:asyncomplete_auto_popup = 1
+
+" LSP sources
+if executable('clangd') " C/C++
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'clangd',
+        \ 'cmd': {server_info->['clangd']},
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+        \ })
+endif
+if executable('pyls') " Python
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
 " Set vimwiki template settings
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki/html/', 'template_path': '~/vimwiki/templates/', 'template_default': 'default', 'template_ext': '.html', 'auto_toc': '1'}]
