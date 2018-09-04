@@ -2,4 +2,5 @@
 *.swap~
 *.directory
 *.user
+compile_commands.json
 tags
