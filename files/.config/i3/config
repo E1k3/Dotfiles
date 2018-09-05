@@ -76,7 +76,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /home/eike/.config/i3/toggletouchpad.sh
+bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -149,10 +149,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen & suspend
-bindsym $mod+l exec --no-startup-id "/home/eike/.config/i3/locker.sh -s --suspendmins 0"
+bindsym $mod+l exec --no-startup-id "~/.config/i3/locker.sh -s --suspendmins 0"
 
 # lock screen & turn off monitor
-bindsym $mod+Shift+l exec --no-startup-id "/home/eike/.config/i3/locker.sh -o --screenoffsecs 2"
+bindsym $mod+Shift+l exec --no-startup-id "~/.config/i3/locker.sh -o --screenoffsecs 2"
 
 # shutdown
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown now?' -b 'Yes, shutdown' 'systemctl poweroff' -b 'Yes, reboot' 'systemctl reboot'"
@@ -213,7 +213,7 @@ client.urgent			$bg_color_urgent	$bg_color_urgent	$text_color	$bar_color
 # finds out, if available)
 bar
 {
-        status_command i3blocks -c /home/eike/.config/i3/i3blocks.conf
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 
         colors
         {

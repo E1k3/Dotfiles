@@ -3,6 +3,6 @@ if [ "$XDG_CURRENT_DESKTOP" = "i3" ]; then
 	export TERMINAL=qterminal
 fi
 
-if [ "grep -q ^flags.*\ hypervisor /proc/cpuinfo" ]; then
-    VBoxClient-all
-fi
+#if [ "grep -q ^flags.*\ hypervisor /proc/cpuinfo" ]; then
+#    VBoxClient-all
+#fi

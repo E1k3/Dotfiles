@@ -4,4 +4,4 @@
 	name = Eike Gebauer
 	email = e_geba02@wwu.de
 [core]
-	excludesfile = /home/eike/.gitignore_global
+	excludesfile = ~/.gitignore_global
