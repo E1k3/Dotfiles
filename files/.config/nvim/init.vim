@@ -2,10 +2,12 @@
 call plug#begin('~/.config/nvim/plugins')
 
 " Completion
+Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
 " LSP client
-Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 
 " Highlighting and code style
