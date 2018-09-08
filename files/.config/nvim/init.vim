@@ -39,7 +39,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'vimwiki/vimwiki'
 " Visual undo tree
 Plug 'mbbill/undotree'
-" Color highlighting
+" Color code highlighting
 Plug 'chrisbra/Colorizer'
 
 call plug#end()
@@ -113,17 +113,34 @@ nnoremap <Leader>c :ColorToggle<CR>
 
 " Asyncomplete config
 let g:asyncomplete_smart_completion = 1
-let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_remove_duplicates = 1
 
-" LSP sources
-if executable('clangd') " C/C++
+
+" Asyncomplete sources
+" Buffer
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+" File & directory names
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+" C/C++ LSP
+if executable('clangd')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
         \ 'cmd': {server_info->['clangd']},
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
         \ })
 endif
-if executable('pyls') " Python
+" Python LSP
+if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
