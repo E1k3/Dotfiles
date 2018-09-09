@@ -78,7 +78,8 @@ set nu
 set cursorline
 set ruler
 set laststatus=2
-set scrolloff=3
+set scrolloff=5
+set pumheight=10
 set showmode
 set showcmd
 
