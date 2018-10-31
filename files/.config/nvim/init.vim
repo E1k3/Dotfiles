@@ -47,7 +47,7 @@ call plug#end()
 set nocompatible
 filetype plugin indent on
 
-set background=light 
+set background=dark 
 set termguicolors
 
 colorscheme gruvbox
@@ -55,7 +55,7 @@ let g:gruvbox_bold='1'
 let g:gruvbox_italic='1'
 let g:gruvbox_underline='1'
 let g:gruvbox_undercurl='1'
-let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_dark='hard'
 
 let g:lightline = { 'colorscheme' : 'gruvbox' }
 
@@ -150,4 +150,4 @@ if executable('pyls')
 endif
 
 " Set vimwiki template settings
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki/html/', 'template_path': '~/vimwiki/templates/', 'template_default': 'default', 'template_ext': '.html', 'auto_toc': '1'}]
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki/html/', 'template_path': '~/vimwiki/templates/', 'template_default': 'default', 'template_ext': '.html', 'auto_toc': '1', 'nexted_syntaxes': {'c++':'cpp', 'php':'php'}}]
