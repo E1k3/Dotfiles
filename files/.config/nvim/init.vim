@@ -15,8 +15,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'tikhomirov/vim-glsl'
 " Haskell syntax highlighting
 Plug 'neovimhaskell/haskell-vim'
-" Python Folding
-Plug 'tmhedberg/SimpylFold'
 " Haskell indentation
 Plug 'itchyny/vim-haskell-indent'
 
@@ -115,7 +113,6 @@ nnoremap <Leader>c :ColorToggle<CR>
 " Asyncomplete config
 let g:asyncomplete_smart_completion = 1
 let g:asyncomplete_remove_duplicates = 1
-
 
 " Asyncomplete sources
 " Buffer
