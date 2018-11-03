@@ -24,7 +24,11 @@ Plug 'itchyny/lightline.vim'
 " Colorscheme gruvbox
 Plug 'morhetz/gruvbox'
 
-"Utility
+" Utility
+" Command aliases
+Plug 'Konfekt/vim-alias'
+" Netrw extension
+Plug 'tpope/vim-vinegar'
 " Git
 Plug 'tpope/vim-fugitive'
 " Surround text with tags/chars
@@ -110,8 +114,15 @@ nnoremap <Leader>rr :UndotreeToggle<CR>
 " RGB highlighting 
 nnoremap <Leader>c :ColorToggle<CR>
 
+" Netrw settings
+nnoremap <Leader>e :Ex!<CR>
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
+let g:netrw_preview = 1
+
 " Asyncomplete config
 let g:asyncomplete_smart_completion = 1
+let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_remove_duplicates = 1
 
 " Asyncomplete sources
@@ -121,12 +132,13 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
     \ 'whitelist': ['*'],
     \ 'blacklist': ['go'],
     \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'priority': 1,
     \ }))
 " File & directory names
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
     \ 'name': 'file',
     \ 'whitelist': ['*'],
-    \ 'priority': 10,
+    \ 'priority': 5,
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 " C/C++ LSP
@@ -135,6 +147,7 @@ if executable('clangd')
         \ 'name': 'clangd',
         \ 'cmd': {server_info->['clangd']},
         \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+		\ 'priority' : 10
         \ })
 endif
 " Python LSP
@@ -143,8 +156,17 @@ if executable('pyls')
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
         \ 'whitelist': ['python'],
+		\ 'priority' : 10
         \ })
 endif
 
 " Set vimwiki template settings
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki/html/', 'template_path': '~/vimwiki/templates/', 'template_default': 'default', 'template_ext': '.html', 'auto_toc': '1', 'nexted_syntaxes': {'c++':'cpp', 'php':'php'}}]
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.path_html = '~/vimwiki/html/'
+let wiki.template_path = '~/vimwiki/templates/'
+let wiki.template_default = 'default'
+let wiki.template_ext = '.html'
+let wiki.auto_toc = '1'
+let wiki.nested_syntaxes = {'c++':'cpp', 'php':'php', 'python':'python'}
+let g:vimwiki_list = [wiki]
