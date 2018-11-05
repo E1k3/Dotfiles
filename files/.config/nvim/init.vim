@@ -96,6 +96,7 @@ set wrap
 set linebreak
 
 set autoindent
+set cino+=(0
 set tabstop=4
 set shiftwidth=4
 
