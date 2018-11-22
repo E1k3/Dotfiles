@@ -4,3 +4,4 @@
 *.user
 compile_commands.json
 tags
+.venv
