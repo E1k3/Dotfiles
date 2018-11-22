@@ -5,3 +5,7 @@
 	email = e_geba02@wwu.de
 [core]
 	excludesfile = ~/.gitignore_global
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff

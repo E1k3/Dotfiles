@@ -29,7 +29,7 @@ function where_am_i
 			ref="${ref}"
 		fi
 	else
-		ref="%~"
+		ref="%{$FG[045]%}%~%{$reset_color%}"
 	fi
 
 	echo $ref
