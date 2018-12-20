@@ -68,6 +68,8 @@ set hidden
 set directory=$HOME/.cache/neovim,.
 
 set path+=**
+set wildignore+=**/.mypy_cache/**
+set wildignore+=**/__pycache__/**
 set ignorecase
 set smartcase
 set incsearch
