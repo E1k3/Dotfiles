@@ -70,6 +70,7 @@ set directory=$HOME/.cache/neovim,.
 set path+=**
 set wildignore+=**/.mypy_cache/**
 set wildignore+=**/__pycache__/**
+set wildignore+=**/.git/**
 set ignorecase
 set smartcase
 set incsearch
@@ -98,7 +99,7 @@ set wrap
 set linebreak
 
 set autoindent
-set cino+=(0
+set cinoptions+=(0
 set tabstop=4
 set shiftwidth=4
 
@@ -162,6 +163,9 @@ if executable('pyls')
 		\ 'priority' : 10
         \ })
 endif
+
+" Language Server completion maps
+nnoremap <Leader>h :LspHover<CR>
 
 " Set vimwiki template settings
 let wiki = {}
