@@ -123,6 +123,7 @@ nnoremap <Leader>e :Ex!<CR>
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 2
 let g:netrw_preview = 1
+let g:netrw_list_hide = netrw_gitignore#Hide()
 
 " Asyncomplete config
 let g:asyncomplete_smart_completion = 1
@@ -166,6 +167,7 @@ endif
 
 " Language Server completion maps
 nnoremap <Leader>h :LspHover<CR>
+nnoremap <Leader>dd :LspDocumentDiagnostics<CR>
 
 " Set vimwiki template settings
 let wiki = {}
