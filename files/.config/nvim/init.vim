@@ -38,6 +38,8 @@ Plug 'tpope/vim-repeat'
 " Faster navigation (like f/t but with 2 characters)
 Plug 'justinmk/vim-sneak'
 " Wiki & Journal
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vimwiki/vimwiki'
 " Visual undo tree
 Plug 'mbbill/undotree'
@@ -133,15 +135,14 @@ let g:asyncomplete_remove_duplicates = 1
 call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
     \ 'name': 'buffer',
     \ 'whitelist': ['*'],
-    \ 'blacklist': ['go'],
     \ 'completor': function('asyncomplete#sources#buffer#completor'),
-    \ 'priority': 1,
+    \ 'priority': -1,
     \ }))
 " File & directory names
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
     \ 'name': 'file',
     \ 'whitelist': ['*'],
-    \ 'priority': 5,
+    \ 'priority': 0,
     \ 'completor': function('asyncomplete#sources#file#completor')
     \ }))
 " C/C++ LSP
