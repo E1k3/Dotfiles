@@ -166,8 +166,10 @@ if executable('pyls')
 endif
 
 " Language Server completion maps
-nnoremap <Leader>h :LspHover<CR>
-nnoremap <Leader>dd :LspDocumentDiagnostics<CR>
+nnoremap <Leader>lh :LspHover<CR>
+nnoremap <Leader>ldd :LspDocumentDiagnostics<CR>
+nnoremap <Leader>lr :LspRename<CR>
+nnoremap <Leader>ldf :LspRename<CR>
 
 " Set vimwiki template settings
 let wiki = {}
