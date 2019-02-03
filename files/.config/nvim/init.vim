@@ -169,7 +169,7 @@ endif
 nnoremap <Leader>lh :LspHover<CR>
 nnoremap <Leader>ldd :LspDocumentDiagnostics<CR>
 nnoremap <Leader>lr :LspRename<CR>
-nnoremap <Leader>ldf :LspRename<CR>
+nnoremap <Leader>ldf :LspDefinition<CR>
 
 " Set vimwiki template settings
 let wiki = {}
