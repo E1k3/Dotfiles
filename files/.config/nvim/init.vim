@@ -105,6 +105,8 @@ set cinoptions+=(0
 set tabstop=4
 set shiftwidth=4
 
+autocmd FileType python setlocal foldmethod=indent
+
 let mapleader="\\"
 map <Space> <Leader>
 
