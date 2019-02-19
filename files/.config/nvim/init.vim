@@ -170,7 +170,8 @@ endif
 " Language Server completion maps
 nnoremap <Leader>lh :LspHover<CR>
 nnoremap <Leader>ldd :LspDocumentDiagnostics<CR>
-nnoremap <Leader>lr :LspRename<CR>
+nnoremap <Leader>lrn :LspRename<CR>
+nnoremap <Leader>lrf :LspReferences<CR>
 nnoremap <Leader>ldf :LspDefinition<CR>
 
 " Set vimwiki template settings
