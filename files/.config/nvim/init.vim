@@ -106,6 +106,7 @@ set tabstop=4
 set shiftwidth=4
 
 autocmd FileType python setlocal foldmethod=indent
+autocmd FileType python normal zR
 
 let mapleader="\\"
 map <Space> <Leader>
