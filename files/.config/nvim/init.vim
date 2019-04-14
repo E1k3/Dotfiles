@@ -182,6 +182,6 @@ let wiki.path_html = '~/vimwiki/html/'
 let wiki.template_path = '~/vimwiki/templates/'
 let wiki.template_default = 'default'
 let wiki.template_ext = '.html'
-let wiki.auto_toc = '1'
+let wiki.auto_toc = 1
 let wiki.nested_syntaxes = {'c++':'cpp', 'php':'php', 'python':'python'}
 let g:vimwiki_list = [wiki]
