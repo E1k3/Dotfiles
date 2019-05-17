@@ -134,6 +134,11 @@ let g:asyncomplete_smart_completion = 1
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_remove_duplicates = 1
 
+" LSP config
+let g:lsp_highlights_enabled = 0
+let g:lsp_textprop_enabled = 0
+" let g:lsp_virtual_text_enabled = 0
+
 " Asyncomplete sources
 " Buffer
 call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
