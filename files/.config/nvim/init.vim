@@ -38,8 +38,6 @@ Plug 'tpope/vim-repeat'
 " Faster navigation (like f/t but with 2 characters)
 Plug 'justinmk/vim-sneak'
 " Wiki & Journal
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vimwiki/vimwiki'
 " Visual undo tree
 Plug 'mbbill/undotree'
