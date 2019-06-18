@@ -129,7 +129,7 @@ assign [class="Google-chrome"] $workspace2
 
 assign [class="QtCreator"] $workspace3
 assign [class="processing-app-Base"] $workspace3
-assign [class="jetbrains-idea-ce"] $workspace3
+assign [class="jetbrains-.*"] $workspace3
 assign [class="Eclipse"] $workspace3
 
 assign [instance="libreoffice"] $workspace4
