@@ -106,6 +106,8 @@ set shiftwidth=4
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType python normal zR
 
+autocmd FileType c,cpp,python,java setlocal colorcolumn=80
+
 let mapleader="\\"
 map <Space> <Leader>
 
@@ -123,20 +125,20 @@ nnoremap <Leader>c :ColorToggle<CR>
 
 " Netrw settings
 nnoremap <Leader>e :Ex!<CR>
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 2
-let g:netrw_preview = 1
+let g:netrw_liststyle=3
+let g:netrw_browse_split=2
+let g:netrw_preview=1
 
 " Asyncomplete config
-let g:asyncomplete_smart_completion = 1
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_remove_duplicates = 1
+let g:asyncomplete_smart_completion=1
+let g:asyncomplete_auto_popup=1
+let g:asyncomplete_remove_duplicates=1
 
 " LSP config
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_highlight_references_enabled = 1
-let g:lsp_signs_enabled = 0
-let g:lsp_text_edit_enabled = 0
+let g:lsp_diagnostics_echo_cursor=1
+let g:lsp_highlight_references_enabled=1
+let g:lsp_signs_enabled=0
+let g:lsp_text_edit_enabled=0
 
 " Asyncomplete sources
 " Buffer
@@ -180,12 +182,12 @@ nnoremap <Leader>lrf :LspReferences<CR>
 nnoremap <Leader>ldf :LspDefinition<CR>
 
 " Set vimwiki template settings
-let wiki = {}
-let wiki.path = '~/vimwiki/'
-let wiki.path_html = '~/vimwiki/html/'
-let wiki.template_path = '~/vimwiki/templates/'
-let wiki.template_default = 'default'
-let wiki.template_ext = '.html'
-let wiki.auto_toc = 1
-let wiki.nested_syntaxes = {'c++':'cpp', 'php':'php', 'python':'python'}
-let g:vimwiki_list = [wiki]
+let wiki={}
+let wiki.path='~/vimwiki/'
+let wiki.path_html='~/vimwiki/html/'
+let wiki.template_path='~/vimwiki/templates/'
+let wiki.template_default='default'
+let wiki.template_ext='.html'
+let wiki.auto_toc=1
+let wiki.nested_syntaxes={'c++':'cpp', 'php':'php', 'python':'python'}
+let g:vimwiki_list=[wiki]
