@@ -64,6 +64,7 @@ source $ZSH/oh-my-zsh.sh
 
 export VISUAL='nvim'
 export EDITOR='nvim'
+export QT_LOGGING_RULES='qt5ct.debug=false'
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 
 # Compilation flags
