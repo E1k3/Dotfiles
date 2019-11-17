@@ -79,13 +79,12 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -lhH --color=auto --group-directories-first"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"
 alias sudovim="sudo -E nvim"
 alias info="info --vi-keys"
+alias xopen="xdg-open"
 cdgit() { cd `git rev-parse --show-toplevel`; }
 
 # Vim colorscheme correction
