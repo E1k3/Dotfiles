@@ -120,6 +120,7 @@ nnoremap <Leader>yy "+yy
 " Undo tree toggle
 nnoremap <Leader>rr :UndotreeToggle<CR>
 
+let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'c', 'bash=sh']
 " RGB highlighting 
 nnoremap <Leader>c :ColorToggle<CR>
 
