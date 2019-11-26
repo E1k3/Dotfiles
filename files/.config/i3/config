@@ -218,7 +218,7 @@ client.urgent			$bg_color_urgent	$bg_color_urgent	$text_color		$bar_color
 # finds out, if available)
 bar
 {
-        status_command "SCRIPT_DIR=$HOME/.config/i3/i3blocks-dir-selector.sh) i3blocks -c $HOME/.config/i3/i3blocks.conf"
+        status_command "SCRIPT_DIR=$HOME/.config/i3blocks i3blocks -c $HOME/.config/i3/i3blocks.conf"
 
         colors
         {
