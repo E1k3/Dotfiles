@@ -112,7 +112,8 @@ let mapleader="\\"
 map <Space> <Leader>
 
 " Clipboard maps
-nnoremap <Leader>p "+p
+nnoremap <Leader>p :put +<CR>
+nnoremap <Leader>P :put! +<CR>
 vnoremap <Leader>y "+y
 vnoremap <Leader>p "+p
 nnoremap <Leader>yy "+yy
