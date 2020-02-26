@@ -247,3 +247,4 @@ exec firefox
 workspace $workspace2 output primary
 exec audacious
 exec thunderbird
+exec dunst
