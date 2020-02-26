@@ -79,6 +79,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias mv="mv -i"
 alias ls="ls -lhH --color=auto --group-directories-first"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"
