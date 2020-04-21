@@ -1,7 +1,7 @@
 function remote_session
 {
 	if [[ -n $SSH_CLIENT ]]; then
-		echo "%{$fg_bold[black]%}%n@%m %{$reset_color%}"
+		echo "%{$fg_bold[red]%}%n@%m %{$reset_color%}"
 	fi
 }
 
