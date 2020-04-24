@@ -72,9 +72,9 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec ~/.config/i3/volume.sh 5%+
-bindsym XF86AudioLowerVolume exec ~/.config/i3/volume.sh 5%-
-bindsym XF86AudioMute exec ~/.config/i3/volume.sh toggle
+bindsym XF86AudioRaiseVolume exec flock -n /tmp/volume.lock -c "amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioLowerVolume exec flock -n /tmp/volume.lock -c "amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioMute exec flock -n /tmp/volume.lock -c "amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks"
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
