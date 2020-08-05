@@ -2,6 +2,7 @@
 *.swap~
 *.directory
 *.user
+*.user.*
 compile_commands.json
 tags
 .venv
