@@ -80,12 +80,14 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 #
 # Example aliases
 alias mv="mv -i"
-alias ls="ls -lhH --color=auto --group-directories-first"
+alias l="ls -lhH --color=auto --group-directories-first"
+alias ll="l -a"
+alias l1="\\ls -1"
 alias sudoedit="sudoedit -E"
 alias vim="nvim"
+alias v="vim"
 alias sudovim="sudo -E nvim"
-alias info="info --vi-keys"
-alias xopen="xdg-open"
+alias xo="xdg-open"
 cdgit() { cd `git rev-parse --show-toplevel`; }
 
 # Vim colorscheme correction
