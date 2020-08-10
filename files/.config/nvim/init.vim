@@ -108,6 +108,8 @@ autocmd FileType python normal zR
 
 autocmd FileType c,cpp,python,java setlocal colorcolumn=80
 
+autocmd FileType tex setlocal spelllang=en_gb spell
+
 let mapleader="\\"
 map <Space> <Leader>
 
