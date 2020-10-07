@@ -87,6 +87,7 @@ alias sudoedit="sudoedit -E"
 alias vim="nvim"
 alias v="vim"
 alias sudovim="sudo -E nvim"
+alias sv="sudovim"
 alias xo="xdg-open"
 alias feh="feh -d -. --keep-zoom-vp"
 cdgit() { cd `git rev-parse --show-toplevel`; }
