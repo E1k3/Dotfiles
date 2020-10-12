@@ -90,6 +90,7 @@ alias sudovim="sudo -E nvim"
 alias sv="sudovim"
 alias xo="xdg-open"
 alias feh="feh -d -. --keep-zoom-vp"
+alias sc="systemctl"
 cdgit() { cd `git rev-parse --show-toplevel`; }
 
 # Vim colorscheme correction
