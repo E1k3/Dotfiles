@@ -9,3 +9,5 @@ tags
 .mypy_cache
 __pycache__
 .clangd
+*.fcstd1
+*.FCStd1
