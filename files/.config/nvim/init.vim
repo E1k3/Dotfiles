@@ -2,7 +2,6 @@
 call plug#begin('~/.config/nvim/plugins')
 
 " Completion
-Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/asyncomplete-file.vim'
@@ -103,6 +102,8 @@ set cinoptions+=(0
 set tabstop=4
 set shiftwidth=4
 
+let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'c', 'bash=sh']
+
 autocmd FileType python setlocal foldmethod=indent
 autocmd FileType python normal zR
 
@@ -123,7 +124,6 @@ nnoremap <Leader>yy "+yy
 " Undo tree toggle
 nnoremap <Leader>rr :UndotreeToggle<CR>
 
-let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'c', 'bash=sh']
 " RGB highlighting 
 nnoremap <Leader>c :ColorToggle<CR>
 
@@ -139,12 +139,6 @@ let g:asyncomplete_auto_popup=1
 let g:asyncomplete_remove_duplicates=1
 
 inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() . "\<CR>" : "\<CR>"
-
-" LSP config
-let g:lsp_diagnostics_echo_cursor=1
-let g:lsp_highlight_references_enabled=1
-let g:lsp_signs_enabled=0
-let g:lsp_text_edit_enabled=0
 
 " Asyncomplete sources
 " Buffer
@@ -166,8 +160,7 @@ if executable('clangd')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'clangd',
         \ 'cmd': {server_info->['clangd']},
-        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-		\ 'priority' : 10
+        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp']
         \ })
 endif
 " Python LSP
@@ -175,17 +168,43 @@ if executable('pyls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pyls',
         \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-		\ 'priority' : 10
+        \ 'whitelist': ['python']
         \ })
 endif
 
-" Language Server completion maps
-nnoremap <Leader>lh :LspHover<CR>
-nnoremap <Leader>ldd :LspDocumentDiagnostics<CR>
-nnoremap <Leader>lrn :LspRename<CR>
-nnoremap <Leader>lrf :LspReferences<CR>
-nnoremap <Leader>ldf :LspDefinition<CR>
+" LSP config
+let g:lsp_diagnostics_echo_cursor=1
+let g:lsp_highlight_references_enabled=1
+let g:lsp_signs_enabled=0
+let g:lsp_text_edit_enabled=0
+
+" LSP maps
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    "TODO: enable, when signs are setup -> setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+	" Jumps to def/impl/decl
+    nmap <buffer> <Leader>ld <Plug>(lsp-definition)
+    nmap <buffer> <Leader>li <Plug>(lsp-implementation)
+    nmap <buffer> <Leader>lt <Plug>(lsp-type-definition)
+	" Rename symbol
+    nmap <buffer> <Leader>ln <Plug>(lsp-rename)
+	" Show hover
+    nmap <buffer> <Leader>lh <Plug>(lsp-hover)
+	" List references
+    nmap <buffer> <Leader>lr <Plug>(lsp-references)
+	" List errors
+    nmap <buffer> <Leader>le <Plug>(lsp-document-diagnostics)
+	" Jump to errors
+    nmap <buffer> [e <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]e <Plug>(lsp-next-diagnostic)
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " Set vimwiki template settings
 let wiki={}
