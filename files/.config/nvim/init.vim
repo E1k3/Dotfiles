@@ -114,6 +114,10 @@ autocmd FileType tex setlocal spelllang=en_gb spell
 let mapleader="\\"
 map <Space> <Leader>
 
+" Quickfix window maps
+nnoremap <Leader>co :cwindow<CR>
+nnoremap <Leader>cc :cclose<CR>
+
 " Clipboard maps
 nnoremap <Leader>p :put +<CR>
 nnoremap <Leader>P :put! +<CR>
