@@ -111,8 +111,8 @@ autocmd FileType c,cpp,python,java setlocal colorcolumn=80
 
 autocmd FileType tex setlocal spelllang=en_gb spell
 
-let mapleader="\\"
-map <Space> <Leader>
+nnoremap <Space> <Nop>
+let mapleader=" "
 
 " Quickfix window maps
 nnoremap <Leader>co :cwindow<CR>
@@ -134,8 +134,8 @@ nnoremap <Leader>c :ColorToggle<CR>
 " Netrw settings
 nnoremap <Leader>e :Ex!<CR>
 let g:netrw_liststyle=3
-let g:netrw_browse_split=2
 let g:netrw_preview=1
+nmap - <Plug>VinegarVerticalSplitUp
 
 " Asyncomplete config
 let g:asyncomplete_smart_completion=1
