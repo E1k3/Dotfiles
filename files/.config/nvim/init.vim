@@ -114,9 +114,9 @@ autocmd FileType tex setlocal spelllang=en_gb spell
 nnoremap <Space> <Nop>
 let mapleader=" "
 
-" Quickfix window maps
+" Quickfix and location window maps
 nnoremap <Leader>co :cwindow<CR>
-nnoremap <Leader>cc :cclose<CR>
+nnoremap <Leader>cc :cclose<CR>:lclose<CR>
 
 " Clipboard maps
 nnoremap <Leader>p :put +<CR>
