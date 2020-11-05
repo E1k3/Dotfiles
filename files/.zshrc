@@ -93,6 +93,9 @@ alias svd="sudovim -d"
 alias xo="xdg-open"
 alias feh="feh -d -. --keep-zoom-vp"
 alias sc="systemctl"
+
+alias env_esp="export PATH=\"\$PATH:/opt/esp8266/toolchain/bin\"; export IDF_PATH=/opt/esp8266/sdk"
+
 cdgit() { cd `git rev-parse --show-toplevel`; }
 
 # Vim colorscheme correction
