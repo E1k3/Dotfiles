@@ -80,6 +80,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 #
 # Example aliases
 alias mv="mv -i"
+alias grep="grep --colour"
 alias l="ls -lhH --color=auto --group-directories-first"
 alias ll="l -a"
 alias l1="\\ls -1"
@@ -92,7 +93,6 @@ alias sv="sudovim"
 alias svd="sudovim -d"
 alias xo="xdg-open"
 alias feh="feh -d -. --keep-zoom-vp"
-alias sc="systemctl"
 
 alias env_esp="export PATH=\"\$PATH:/opt/esp8266/toolchain/bin\"; export IDF_PATH=/opt/esp8266/sdk"
 
