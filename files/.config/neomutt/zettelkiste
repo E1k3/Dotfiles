@@ -1,0 +1,21 @@
+set mbox_type = Maildir
+
+# Folders
+set folder = "~/.mail/zettelkiste/"
+set spoolfile = "+Inbox"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+# Identity
+set realname = "Eike Gebauer"
+set from = "eike@zettelkiste.de"
+alternates "^eike\.gebauer@zettelkiste\.de"
+
+# SMTP
+set smtp_pass = `gpg2 -q --for-your-eyes-only --batch -d ~/.config/mbsync/zettelkiste.gpg`
+set smtp_url = "smpt://eike@zettelkiste.de@smtp.1und1.de:587"
+
+# Notmuch
+set nm_default_uri = "notmuch:///home/eike/.mail/zettelkiste/"
+set query_command = "neomutt-address-nm --config /home/eike/.mail/zettelkiste/.notmuch-config '%s'"

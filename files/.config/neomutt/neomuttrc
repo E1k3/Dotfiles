@@ -1,0 +1,62 @@
+set reverse_name
+
+set folder = "~/.mail/wwu/"
+source ~/.config/neomutt/wwu
+
+folder-hook "wwu/*" "source ~/.config/neomutt/wwu"
+folder-hook "zettelkiste/*" "source ~/.config/neomutt/zettelkiste"
+mailboxes +../wwu/Inbox +../wwu/Drafts +../wwu/Sent +../wwu/Archives +../wwu/Trash +../zettelkiste/Inbox +../zettelkiste/Drafts +../zettelkiste/Sent +../zettelkiste/Archives +../zettelkiste/Trash
+set mail_check = 60
+
+###############
+# Pager settings
+#
+ignore *
+unignore From Message-ID Date To Cc Bcc Subject
+
+set pager_stop
+unset markers
+
+# Prefer plain text to html.
+# However, for brain dead clients that bundle attachments inside a
+# multipart/alternative, prefer that alternative.
+alternative_order multipart/mixed multipart/related text/plain
+
+# Consult mime.types for determining types of these attachments
+mime_lookup application/octet-stream
+
+# This requires a ~/.mailcap entry with the copiousoutput flag, such as:
+# text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
+auto_view text/html
+
+###############
+# Index settings
+#
+set quit = ask-yes
+set sort = threads
+
+# Remember to `mkdir -p ~/.neomutt/hcache` first:
+set header_cache= "~/.neomutt/hcache"
+
+###############
+# Message composition settings
+#
+set edit_headers
+
+# set editor = "emacsclient -a emacs -t"
+# set editor = "vim"
+
+set mime_type_query_command = "xdg-mime query filetype"
+
+# lbdb is a versatile contact query tool.
+# Invoke via ctrl-t in an address prompt
+# set query_command = "/usr/bin/lbdbq"
+
+###############
+# GnuPG
+#
+# unset crypt_use_gpgme
+# source /usr/local/share/doc/neomutt/samples/gpg.rc
+# set pgp_default_key = "0x1234567890ABCDEF"
+# set crypt_opportunistic_encrypt
+# set postpone_encrypt

@@ -1,0 +1,23 @@
+set mbox_type = Maildir
+
+# Folders
+set folder = "~/.mail/wwu/"
+set spoolfile = "+Inbox"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+# Identity
+set realname = "Eike Gebauer"
+set from = "e_geba02@uni-muenster.de"
+alternates "^eike.gebauer@(uni-muenster|wwu)\.de"
+alternates "^e_geba02@(uni-muenster|wwu)\.de"
+alternates "^e.g@(uni-muenster|wwu)\.de"
+
+# SMTP
+set smtp_pass = `gpg2 -q --for-your-eyes-only --batch -d ~/.config/mbsync/wwu.gpg`
+set smtp_url = "smpt://e_geba02@secmail.uni-muenster.de:587"
+
+# Notmuch
+set nm_default_uri = "notmuch:///home/eike/.mail/wwu/"
+set query_command = "neomutt-address-nm --config /home/eike/.mail/wwu/.notmuch-config '%s'"
