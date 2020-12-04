@@ -62,10 +62,11 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-export VISUAL='nvim'
-export EDITOR='nvim'
-export QT_LOGGING_RULES='qt5ct.debug=false'
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
+export VISUAL="nvim"
+export EDITOR="nvim"
+export QT_LOGGING_RULES="qt5ct.debug=false"
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp"
+export PAGER="less -j4"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -79,6 +80,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias less="less -j4"
 alias mv="mv -i"
 alias grep="grep --colour"
 alias l="ls -lhH --color=auto --group-directories-first"
@@ -91,8 +93,9 @@ alias vd="vim -d"
 alias sudovim="sudo -E nvim"
 alias sv="sudovim"
 alias svd="sudovim -d"
-alias xo="xdg-open"
 alias feh="feh -d -. --keep-zoom-vp"
+
+function xo { xdg-open $@ &! }
 
 alias env_esp="export PATH=\"\$PATH:/opt/esp8266/toolchain/bin\"; export IDF_PATH=/opt/esp8266/sdk"
 
