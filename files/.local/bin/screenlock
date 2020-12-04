@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 if ! pgrep i3lock > /dev/null; then
 	scrot /tmp/screen_locked.png
 

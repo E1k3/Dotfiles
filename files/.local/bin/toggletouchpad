@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 if ! which synclient &> /dev/null; then exit 1; fi
-if synclient -l | grep "TouchpadOff .*=.*0" ; then
-    synclient TouchpadOff=1 ;
+if synclient -l | grep "TouchpadOff .*=.*0"; then
+    synclient TouchpadOff=1;
 else
-    synclient TouchpadOff=0 ;
+    synclient TouchpadOff=0;
 fi
