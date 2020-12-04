@@ -81,7 +81,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh
+bindsym XF86TouchpadToggle exec toggletouchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -154,10 +154,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock screen & suspend
-bindsym $mod+l exec --no-startup-id "~/.config/i3/locker.sh -s --suspendmins 0"
+bindsym $mod+l exec --no-startup-id "screenlock; systemctl suspend"
 
 # lock screen & turn off monitor
-bindsym $mod+Shift+l exec --no-startup-id "~/.config/i3/locker.sh -o --screenoffsecs 2"
+bindsym $mod+Shift+l exec --no-startup-id "screenlock; xset dpms off"
 
 # shutdown
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the shutdown shortcut. Do you really want to shutdown now?' -b 'Yes, shutdown' 'systemctl poweroff' -b 'Yes, reboot' 'systemctl reboot'"
@@ -230,21 +230,18 @@ bar
 }
 
 
-# rofi application launcher
+# rofi launcher
 bindsym $mod+d exec rofi -show run -config $HOME/.config/i3/rofi.conf
 
 # autostart
 # wallpaper
-exec_always --no-startup-id feh --no-fehbg --bg-scale $( xdg-user-dir PICTURES )/wallpaper.png
+exec_always --no-startup-id feh --no-fehbg --bg-scale $(xdg-user-dir PICTURES)/wallpaper.png
 
 # screen lock
-exec --no-startup-id xautolock	-detectsleep \
-				-notify 10 -notifier "xset dpms force off" \
-				-time 20 -locker "$HOME/.config/i3/locker.sh -s --suspendmins 3" 
+exec --no-startup-id xautolock -detectsleep -time 10 -locker "screenlock; xset dpms force off" -killtime 15 -killer "systemctl suspend"
 
 # applications
 exec firefox
-workspace $workspace2 output primary
 exec audacious
 exec thunderbird
 exec dunst

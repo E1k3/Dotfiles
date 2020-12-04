@@ -1,0 +1,10 @@
+#!/bin/bash
+if ! pgrep i3lock > /dev/null; then
+	scrot /tmp/screen_locked.png
+
+	ffmpeg -i /tmp/screen_locked.png -y -v error -vf "scale=w=iw/16:h=ih/16:flags=fast_bilinear,scale=w=iw*16:h=ih*16:flags=neighbor,boxblur=luma_radius=2:chroma_radius=2" /tmp/screen_blurred.png
+
+	rm /tmp/screen_locked.png
+
+	i3lock -i /tmp/screen_blurred.png
+fi
