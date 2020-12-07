@@ -1,6 +1,12 @@
 #!/bin/sh
 pixelation=20
 blur=4
+
+if [[ -n "$1" && "$1" != "-n" ]]; then
+	echo -e "Usage: $0 [-n]\n\t-n\tStarts i3lock with --no-fork option"
+	exit 1
+fi
+
 if ! pgrep i3lock > /dev/null; then
 	scrot -om /tmp/screen_locked.png
 
@@ -8,5 +14,5 @@ if ! pgrep i3lock > /dev/null; then
 
 	rm /tmp/screen_locked.png
 
-	i3lock -i /tmp/screen_blurred.png
+	i3lock "$1" -i /tmp/screen_blurred.png
 fi
