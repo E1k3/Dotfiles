@@ -4,5 +4,4 @@ choice="$(echo -e "Cancel\nShutdown\nReboot" | dmenu -i -p "Shutdown or reboot n
 case "$choice" in
 	Shutdown) systemctl poweroff;;
 	Reboot) systemctl reboot;;
-	*) exit 0;;
 esac
