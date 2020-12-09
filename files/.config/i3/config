@@ -238,7 +238,7 @@ bindsym $mod+d exec rofi -show run -config $HOME/.config/i3/rofi.conf
 exec_always --no-startup-id feh --no-fehbg --bg-scale $(xdg-user-dir PICTURES)/wallpaper.png
 
 # screen lock
-exec --no-startup-id xss-lock "screenlock -n"
+exec --no-startup-id xss-lock --transfer-sleep-lock -- screenlock -n
 
 # applications
 exec firefox
