@@ -10,7 +10,7 @@ fi
 if ! pgrep i3lock > /dev/null; then
 	scrot -om /tmp/screenlock.png
 
-	ffmpeg -i /tmp/screenlock.png -y -v error -vf "scale=w=iw/$pixelation:h=-1:flags=neighbor,scale=w=iw*$pixelation:h=-1:flags=neighbor,boxblur=luma_radius=$blur:chroma_radius=$blur" /tmp/screen_blurred.png
+	ffmpeg -i /tmp/screenlock.png -y -v error -vf "scale=w=iw/${pixelation}:h=-1:flags=neighbor,scale=w=iw*${pixelation}:h=-1:flags=neighbor,boxblur=luma_radius=${blur}:chroma_radius=${blur}" /tmp/screen_blurred.png
 	mv /tmp/screen_blurred.png /tmp/screenlock.png
 
 	i3lock "$1" -i /tmp/screenlock.png
