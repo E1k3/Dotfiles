@@ -236,6 +236,8 @@ bindsym $mod+d exec rofi -show run -config $HOME/.config/i3/rofi.conf
 # autostart
 # wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale $(xdg-user-dir PICTURES)/wallpaper.png
+# eye break reminder
+exec_always --no-startup-id safeeyes -e
 
 # screen lock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- screenlock -n
