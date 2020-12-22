@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Eike Gebauer
-	email = e_geba02@wwu.de
+	email = e.g@wwu.de
 [core]
 	excludesfile = ~/.gitignore_global
 [merge]
