@@ -175,6 +175,15 @@ if executable('pyls')
         \ 'whitelist': ['python']
         \ })
 endif
+" Rust LSP
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+        \ 'whitelist': ['rust']
+        \ })
+endif
 
 " LSP config
 let g:lsp_diagnostics_echo_cursor=1
@@ -193,6 +202,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <Leader>lt <Plug>(lsp-type-definition)
 	" Rename symbol
     nmap <buffer> <Leader>ln <Plug>(lsp-rename)
+	" Reformat file
+    nmap <buffer> <Leader>lf <Plug>(lsp-document-format)
 	" Show hover
     nmap <buffer> <Leader>lh <Plug>(lsp-hover)
 	" List references
