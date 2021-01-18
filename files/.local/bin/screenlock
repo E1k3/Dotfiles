@@ -1,6 +1,6 @@
 #!/bin/zsh
 pixelation=20
-blur=4
+blur=3
 
 if [[ -n "$1" && "$1" != "-n" ]]; then
 	echo -e "Usage: $0 [-n]\n\t-n\tStarts i3lock with --no-fork option"
@@ -10,7 +10,10 @@ fi
 if ! pgrep i3lock > /dev/null; then
 	scrot -om /tmp/screenlock.png
 
-	ffmpeg -i /tmp/screenlock.png -y -v error -vf "scale=w=iw/${pixelation}:h=-1:flags=neighbor,scale=w=iw*${pixelation}:h=-1:flags=neighbor,boxblur=luma_radius=${blur}:chroma_radius=${blur}" /tmp/screen_blurred.png
+	pixel_filter="scale=w=iw/${pixelation}:h=-1:flags=neighbor,scale=w=iw*${pixelation}:h=-1:flags=neighbor"
+	blur_filter="boxblur=luma_radius=${blur}:chroma_radius=${blur}"
+	color_filter="eq=brightness=-0.25:saturation=2,vibrance=intensity=2"
+	ffmpeg -i /tmp/screenlock.png -y -v error -vf "${pixel_filter},${blur_filter},${color_filter}" /tmp/screen_blurred.png
 	mv /tmp/screen_blurred.png /tmp/screenlock.png
 
 	i3lock "$1" -i /tmp/screenlock.png
