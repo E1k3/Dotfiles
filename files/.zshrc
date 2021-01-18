@@ -95,6 +95,17 @@ alias sv="sudovim"
 alias svd="sudovim -d"
 alias feh="feh -d -. --keep-zoom-vp"
 
+alias pm="podman"
+alias pmi="podman image"
+alias pmv="podman volume"
+alias pmc="podman container"
+alias pmp="podman pod"
+alias spm="sudo podman"
+alias spmi="sudo podman image"
+alias spmv="sudo podman volume"
+alias spmc="sudo podman container"
+alias spmp="sudo podman pod"
+
 function xo { xdg-open $@ &! }
 
 alias env_esp="export PATH=\"\$PATH:/opt/esp8266/toolchain/bin\"; export IDF_PATH=/opt/esp8266/sdk"
