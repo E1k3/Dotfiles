@@ -187,14 +187,20 @@ endif
 
 " LSP config
 let g:lsp_diagnostics_echo_cursor=1
+let g:lsp_diagnostics_highlights_enabled=0
 let g:lsp_highlight_references_enabled=1
-let g:lsp_signs_enabled=0
 let g:lsp_text_edit_enabled=0
+
+let g:lsp_diagnostics_signs_enabled=1
+let g:lsp_diagnostics_signs_error={'text': 'E'}
+let g:lsp_diagnostics_signs_warning={'text': 'W'}
+let g:lsp_diagnostics_signs_information={'text': 'I'}
+let g:lsp_diagnostics_signs_hint={'text': 'H'}
 
 " LSP maps
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
-    "TODO: enable, when signs are setup -> setlocal signcolumn=yes
+    setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 	" Jumps to def/impl/decl
     nmap <buffer> <Leader>ld <Plug>(lsp-definition)
@@ -211,8 +217,8 @@ function! s:on_lsp_buffer_enabled() abort
 	" List errors
     nmap <buffer> <Leader>le <Plug>(lsp-document-diagnostics)
 	" Jump to errors
-    nmap <buffer> [e <Plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]e <Plug>(lsp-next-diagnostic)
+    nmap <silent> <buffer> [e <Plug>(lsp-previous-diagnostic)
+    nmap <silent> <buffer> ]e <Plug>(lsp-next-diagnostic)
 endfunction
 
 augroup lsp_install
