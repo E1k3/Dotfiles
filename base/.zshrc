@@ -67,6 +67,7 @@ export EDITOR="nvim"
 export QT_LOGGING_RULES="qt5ct.debug=false"
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp"
 export PAGER="less -j4"
+export PIP_REQUIRE_VIRTUALENV=true
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -94,6 +95,7 @@ alias sudovim="sudo -E nvim"
 alias sv="sudovim"
 alias svd="sudovim -d"
 alias feh="feh -d -. --keep-zoom-vp"
+alias nl="nl -b a -f a -h a"
 
 alias pm="podman"
 alias pmi="podman image"
