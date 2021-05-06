@@ -91,9 +91,8 @@ alias sudoedit="sudoedit -E"
 alias vim="nvim"
 alias v="vim"
 alias vd="vim -d"
-alias sudovim="sudo -E nvim"
-alias sv="sudovim"
-alias svd="sudovim -d"
+alias sv="sudo -E nvim"
+alias svd="sv -d"
 alias feh="feh -d -. --keep-zoom-vp"
 alias nl="nl -b a -f a -h a"
 
@@ -108,7 +107,8 @@ alias spmv="sudo podman volume"
 alias spmc="sudo podman container"
 alias spmp="sudo podman pod"
 
-function xo { for file in $@; do xdg-open $file &!; done }
+function xo { for file in $@; do xdg-open $file &> /dev/null &!; done }
+function xop { for file in $@; do xdg-open $file &!; done }
 
 alias env_esp="export PATH=\"\$PATH:/opt/esp8266/toolchain/bin\"; export IDF_PATH=/opt/esp8266/sdk"
 
