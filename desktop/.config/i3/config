@@ -241,6 +241,8 @@ bindsym $mod+Shift+p exec passmenu --type
 exec_always --no-startup-id feh --no-fehbg --bg-scale $(xdg-user-dir PICTURES)/wallpaper.png
 # eye break reminder
 exec_always --no-startup-id safeeyes -e
+# d-bus player control
+exec_always --no-startup-id playerctld daemon
 
 # screen lock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- screenlock -n
