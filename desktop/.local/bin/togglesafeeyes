@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+
+if [[ "$(safeeyes --status)" == Disabled* ]] {
+	safeeyes --enable
+} else {
+	safeeyes --disable
+}

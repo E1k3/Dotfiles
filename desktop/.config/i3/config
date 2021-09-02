@@ -231,7 +231,7 @@ bar
 
 
 # rofi launcher
-bindsym $mod+d exec rofi -show run -config $HOME/.config/i3/rofi.conf
+bindsym $mod+d exec rofi -show run
 # passmenu
 bindsym $mod+p exec passmenu
 bindsym $mod+Shift+p exec passmenu --type

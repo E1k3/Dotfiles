@@ -1,0 +1,20 @@
+configuration {
+	terminal: "/usr/bin/alacritty";
+	run-shell-command: "/usr/bin/alacritty -e '{cmd}'";
+
+
+	font: Droid Sans Mono 12;
+	lines: 4;
+	eh: 2;
+	width: 100;
+	padding: 325;
+	fullscreen: true;
+
+	color-enabled: true;
+
+	color-normal: "#B0353f3f,#FF676e7d,#B0252f2f,#B02f343f,#FFf3f4f5";
+	color-urgent: "#B0e53935,#FF676e7d,#B0e53935,#B0e53935,#FFf3f4f5";
+	color-active: "#B0353f3f,#FF676e7d,#B0252f2f,#B02f343f,#FFf3f4f5";
+
+	color-window: 	#F0353f3f,	#F03f4050;
+}
