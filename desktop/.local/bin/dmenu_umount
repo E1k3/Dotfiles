@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+
+mounted="$(lsblk -npro NAME,SIZE,TYPE,MOUNTPOINTS | sed '/part \S\+$/!d;s/part /-> /')"
+[[ "$mounted" == "" ]] && exit 1
+device="$(echo $mounted | dmenu -i -p 'Select device' | sed 's/\s.*$//')"
+[[ "$device" != "" ]] && udisksctl unmount -b "$device"

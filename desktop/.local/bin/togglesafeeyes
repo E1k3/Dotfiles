@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
-
-if [[ "$(safeeyes --status)" == Disabled* ]] {
-	safeeyes --enable
+se_status="$(safeeyes --status)"
+if [[ "$se_status" == "Disabled"* || "$se_status" == *"not running" ]] {
+	safeeyes --enable &!
 } else {
-	safeeyes --disable
+	safeeyes --disable &!
 }
