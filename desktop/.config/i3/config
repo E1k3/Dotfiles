@@ -168,6 +168,12 @@ bindsym $mod+c exec --no-startup-id scrot "$HOME/screenshot-$( date +"%F_%T-%N" 
 # capture screenshot of focused window
 bindsym $mod+Shift+c exec --no-startup-id scrot -u "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
 
+# open dmenu_mount and open target in alacritty
+bindsym $mod+m exec dmenu_mount alacritty --working-directory
+
+# open dmenu_umount
+bindsym $mod+Shift+m exec dmenu_umount
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -245,7 +251,7 @@ exec_always --no-startup-id safeeyes -e
 exec_always --no-startup-id playerctld daemon
 
 # screen lock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- screenlock -n
+exec --no-startup-id xss-lock --transfer-sleep-lock -n "notify-send -t 5000 Inactive" -- screenlock -n
 
 # applications
 exec firefox

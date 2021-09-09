@@ -2,5 +2,9 @@
 
 mountable="$(lsblk -npro NAME,SIZE,TYPE,MOUNTPOINTS | sed '/part $/!d;s/\s\+part $//')"
 [[ "$mountable" == "" ]] && exit 1
+
 device="$(echo $mountable | dmenu -i -p 'Select device' | sed 's/\s.*$//')"
-[[ "$device" != "" ]] && udisksctl mount -b "$device"
+[[ "$device" == "" ]] && exit 2
+
+target="$(udisksctl mount -b "$device" | sed 's/^.*at \//\//')"
+[[ "$target" != "" ]] && [[ "$@" != "" ]] && eval $@ $target
