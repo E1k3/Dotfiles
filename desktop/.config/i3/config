@@ -171,8 +171,11 @@ bindsym $mod+Shift+c exec --no-startup-id scrot -u "$HOME/screenshot-$( date +"%
 # open dmenu_mount and open target in alacritty
 bindsym $mod+m exec dmenu_mount alacritty --working-directory
 
+# open dmenu_mount and open target in default file browser
+bindsym $mod+Shift+m exec dmenu_mount xdg-open
+
 # open dmenu_umount
-bindsym $mod+Shift+m exec dmenu_umount
+bindsym $mod+u exec dmenu_umount
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
