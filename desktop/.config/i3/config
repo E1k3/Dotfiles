@@ -168,14 +168,11 @@ bindsym $mod+c exec --no-startup-id scrot "$HOME/screenshot-$( date +"%F_%T-%N" 
 # capture screenshot of focused window
 bindsym $mod+Shift+c exec --no-startup-id scrot -u "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
 
-# open dmenu_mount and open target in alacritty
-bindsym $mod+m exec dmenu_mount alacritty --working-directory
+# open dmenu_mount
+bindsym $mod+m exec mountmenu
 
-# open dmenu_mount and open target in default file browser
-bindsym $mod+Shift+m exec dmenu_mount xdg-open
-
-# open dmenu_umount
-bindsym $mod+u exec dmenu_umount
+# open dmenu_umount and notify when unmounted
+bindsym $mod+u exec "umountmenu && notify-send Unmount successful || notify-send -u critical -t 5000 Unmount failed"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
