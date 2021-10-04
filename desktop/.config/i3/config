@@ -151,7 +151,7 @@ for_window [title="Steam Guard - Computer Authorization Required"] floating enab
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "dmenu_confirm 'Exit i3 now?' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "confirmmenu 'Exit i3 now?' 'i3-msg exit'"
 
 # lock screen & suspend
 bindsym $mod+l exec --no-startup-id "screenlock; systemctl suspend"
@@ -160,7 +160,7 @@ bindsym $mod+l exec --no-startup-id "screenlock; systemctl suspend"
 bindsym $mod+Shift+l exec --no-startup-id "screenlock; xset dpms force off"
 
 # shutdown
-bindsym $mod+Shift+s exec "dmenu_power"
+bindsym $mod+Shift+s exec "powermenu"
 
 # capture screenshot
 bindsym $mod+c exec --no-startup-id scrot "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
@@ -173,6 +173,9 @@ bindsym $mod+m exec mountmenu
 
 # open dmenu_umount and notify when unmounted
 bindsym $mod+u exec "umountmenu && notify-send Unmount successful || notify-send -u critical -t 5000 Unmount failed"
+
+# toggle safeeyes status
+bindsym $mod+o exec togglesafeeyes
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
