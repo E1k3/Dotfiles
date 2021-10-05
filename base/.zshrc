@@ -109,8 +109,7 @@ alias spmvm="podman volume inspect --format \"{{.Mountpoint}}\""
 alias spmc="sudo podman container"
 alias spmp="sudo podman pod"
 
-function xo { for file in $@; do xdg-open $file &> /dev/null &!; done }
-function xop { for file in $@; do xdg-open $file &!; done }
+function xo { for file in $@; do handlr open $file; done }
 
 alias env_esp="export PATH=\"\$PATH:/opt/esp8266/toolchain/bin\"; export IDF_PATH=/opt/esp8266/sdk"
 
