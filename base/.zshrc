@@ -95,6 +95,7 @@ alias sv="sudo -E nvim"
 alias svd="sv -d"
 alias feh="feh -d -. --keep-zoom-vp"
 alias nl="nl -b a -f a -h a"
+alias parallel="parallel-moreutils"
 
 alias pm="podman"
 alias pmi="podman image"
