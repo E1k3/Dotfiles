@@ -1,5 +1,6 @@
 *.un~
 *.swap~
+*.swp
 *.directory
 *.user
 *.user.*
