@@ -1,11 +1,13 @@
 *.un~
 *.swap~
+*.swp
 *.directory
 *.user
 *.user.*
 compile_commands.json
 tags
 .venv
+venv
 .mypy_cache
 __pycache__
 .clangd
