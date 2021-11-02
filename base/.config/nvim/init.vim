@@ -184,6 +184,14 @@ if executable('rls')
         \ 'whitelist': ['rust']
         \ })
 endif
+" Go LSP
+if executable('gopls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gopls',
+        \ 'cmd': {server_info->['gopls']},
+        \ 'whitelist': ['go'],
+        \ })
+endif
 
 " LSP config
 let g:lsp_diagnostics_echo_cursor=1
