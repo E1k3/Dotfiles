@@ -75,12 +75,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 alias less="less -j4"
 alias mv="mv -i"
 alias grep="grep --colour"
@@ -109,6 +103,48 @@ alias spmv="sudo podman volume"
 alias spmvm="podman volume inspect --format \"{{.Mountpoint}}\""
 alias spmc="sudo podman container"
 alias spmp="sudo podman pod"
+
+function pyv {
+	previous="$VIRTUAL_ENV"
+	[[ -v VIRTUAL_ENV ]] && deactivate
+	[[ $# -eq 0 ]] && return 0
+
+	local operation="$1"
+	if [[ $# -eq 1 ]] then
+		local target="$previous"
+	else
+		local target="$(basename $2)"
+		local target="$HOME/.local/share/venv/$target/"
+	fi
+
+	case $operation in
+		(rm|remove)
+			[[ ! -a $target ]] && echo Environment does not exist && return -2
+			rm -rf "$target"
+			;;
+		(update|upgrade)
+			[[ ! -a $target ]] && echo Environment does not exist && return -2
+			source "$target/bin/activate"
+			packages="$(pip list -lo --format freeze | cut -d '=' -f 1)"
+			[[ -z "$packages" ]] && echo All up to date && return 0
+			pip install --upgrade $packages
+			;;
+		(ls|list)
+			l1 "$HOME/.local/share/venv"
+			[[ -a $target ]] && source "$target/bin/activate"
+			;;
+		(create|make)
+			[[ -a $target ]] && echo Environment already exists && return -1
+			python -m venv --upgrade-deps "$target"
+			;&
+		(start|activate)
+			[[ ! -a $target ]] && echo Environment does not exist && return -2
+			source "$target/bin/activate"
+			pip list -lo
+			;;
+	esac
+}
+alias pyva="pyv activate"
 
 function xo { for file in $@; do handlr open $file; done }
 
