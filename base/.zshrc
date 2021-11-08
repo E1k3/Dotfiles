@@ -104,7 +104,7 @@ alias spmvm="podman volume inspect --format \"{{.Mountpoint}}\""
 alias spmc="sudo podman container"
 alias spmp="sudo podman pod"
 
-function pyv {
+function pv {
 	previous="$VIRTUAL_ENV"
 	[[ -v VIRTUAL_ENV ]] && deactivate
 	[[ $# -eq 0 ]] && return 0
@@ -119,11 +119,11 @@ function pyv {
 
 	case $operation in
 		(rm|remove)
-			[[ ! -a $target ]] && echo Environment does not exist && return -2
+			[[ ! -a $target ]] && echo Environment does not exist && return 2
 			rm -rf "$target"
 			;;
 		(update|upgrade)
-			[[ ! -a $target ]] && echo Environment does not exist && return -2
+			[[ ! -a $target ]] && echo Environment does not exist && return 2
 			source "$target/bin/activate"
 			packages="$(pip list -lo --format freeze | cut -d '=' -f 1)"
 			[[ -z "$packages" ]] && echo All up to date && return 0
@@ -134,17 +134,21 @@ function pyv {
 			[[ -a $target ]] && source "$target/bin/activate"
 			;;
 		(create|make)
-			[[ -a $target ]] && echo Environment already exists && return -1
+			[[ -a $target ]] && echo Environment already exists && return 1
 			python -m venv --upgrade-deps "$target"
 			;&
 		(start|activate)
-			[[ ! -a $target ]] && echo Environment does not exist && return -2
+			[[ ! -a $target ]] && echo Environment does not exist && return 2
 			source "$target/bin/activate"
 			pip list -lo
 			;;
+		(*)
+			echo Unknown operation && return 3
+			;;
 	esac
+	return 0
 }
-alias pyva="pyv activate"
+alias pva="pv activate"
 
 function xo { for file in $@; do handlr open $file; done }
 
