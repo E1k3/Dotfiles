@@ -127,7 +127,7 @@ function pv {
 			source "$target/bin/activate"
 			packages="$(pip list -lo --format freeze | cut -d '=' -f 1)"
 			[[ -z "$packages" ]] && echo All up to date && return 0
-			pip install --upgrade $packages
+			echo "$packages" | xargs pip install --upgrade
 			;;
 		(ls|list)
 			l1 "$HOME/.local/share/venv"
@@ -135,7 +135,9 @@ function pv {
 			;;
 		(create|make)
 			[[ -a $target ]] && echo Environment already exists && return 1
-			python -m venv --upgrade-deps "$target"
+			shift  # Shift operation
+			shift  # Shift target
+			python -m venv --upgrade-deps "$target" $@
 			;&
 		(start|activate)
 			[[ ! -a $target ]] && echo Environment does not exist && return 2
@@ -143,6 +145,7 @@ function pv {
 			pip list -lo
 			;;
 		(*)
+			[[ -a $previous ]] && source "$previous/bin/activate"
 			echo Unknown operation && return 3
 			;;
 	esac
