@@ -165,6 +165,9 @@ bindsym $mod+Shift+s exec "powermenu"
 # capture screenshot
 bindsym $mod+c exec --no-startup-id scrot "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
 
+# capture screenshot
+bindsym $mod+c exec --no-startup-id scrot --select "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
+
 # capture screenshot of focused window
 bindsym $mod+Shift+c exec --no-startup-id scrot -u "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
 

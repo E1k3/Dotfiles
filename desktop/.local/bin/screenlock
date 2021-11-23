@@ -11,7 +11,7 @@ if ! pgrep i3lock > /dev/null; then
 	pixel_filter="scale=w=iw/${pixelation}:h=-1:flags=neighbor,scale=w=iw*${pixelation}:h=-1:flags=neighbor"
 	blur_filter="boxblur=luma_radius=${blur}:chroma_radius=${blur}"
 	color_filter="eq=brightness=-0.25:saturation=2,vibrance=intensity=2"
-	scrot -om >(ffmpeg -i - -y -v error -vf "${pixel_filter},${blur_filter},${color_filter}" /tmp/screenlock.png)
+	scrot - | ffmpeg -i - -y -v error -vf "${pixel_filter},${blur_filter},${color_filter}" /tmp/screenlock.png
 
 	i3lock "$1" -i /tmp/screenlock.png
 fi
