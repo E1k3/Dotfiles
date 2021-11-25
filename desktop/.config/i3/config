@@ -166,7 +166,8 @@ bindsym $mod+Shift+s exec "powermenu"
 bindsym $mod+c exec --no-startup-id scrot "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
 
 # capture screenshot
-bindsym $mod+c exec --no-startup-id scrot --select "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
+# sleep for i3 to release mouse pointer before scrot needs it for --select
+bindsym $mod+Ctrl+c exec --no-startup-id sleep 0.2 && scrot --select "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
 
 # capture screenshot of focused window
 bindsym $mod+Shift+c exec --no-startup-id scrot -u "$HOME/screenshot-$( date +"%F_%T-%N" ).png"
