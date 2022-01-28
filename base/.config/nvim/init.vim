@@ -168,10 +168,10 @@ if executable('clangd')
         \ })
 endif
 " Python LSP
-if executable('pyls')
+if executable('pylsp')
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
+        \ 'name': 'pylsp',
+        \ 'cmd': {server_info->['pylsp']},
         \ 'whitelist': ['python']
         \ })
 endif
