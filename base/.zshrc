@@ -68,6 +68,8 @@ export QT_LOGGING_RULES="qt5ct.debug=false"
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp"
 export PAGER="less -j4"
 export PIP_REQUIRE_VIRTUALENV=true
+mkdir -p ~/.cache/genicam
+export GENICAM_CACHE_V3_1=~/cache/genicam
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
