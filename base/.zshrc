@@ -164,7 +164,7 @@ cdgit() { cd `git rev-parse --show-toplevel`; }
 # source ~/.config/nvim/plugins/gruvbox/gruvbox_256palette.sh
 
 HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=10000
+SAVEHIST=10000
 
 setopt autocd nomatch
