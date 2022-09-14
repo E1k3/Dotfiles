@@ -140,7 +140,7 @@ assign [class="Steam" title=".*Chat"] $workspace5
 assign [class="Steam" title="Friends"] $workspace5
 assign [class="Steam" title="Steam"] $workspace6
 
-assign [class="Thunderbird"] $workspace9
+assign [class="thunderbird"] $workspace9
 
 assign [class="Audacious"] $workspace10
 
