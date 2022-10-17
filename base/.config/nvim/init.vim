@@ -220,8 +220,10 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <Leader>lf <Plug>(lsp-document-format)
 	" Show hover
     nmap <buffer> <Leader>lh <Plug>(lsp-hover)
+	" Next reference
+    nmap <buffer> <Leader>lr <Plug>(lsp-next-reference)
 	" List references
-    nmap <buffer> <Leader>lr <Plug>(lsp-references)
+    nmap <buffer> <Leader>llr <Plug>(lsp-references)
 	" List errors
     nmap <buffer> <Leader>le <Plug>(lsp-document-diagnostics)
 	" Jump to errors
