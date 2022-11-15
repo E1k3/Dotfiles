@@ -70,6 +70,7 @@ set path+=**
 set wildignore+=**/.mypy_cache/**
 set wildignore+=**/__pycache__/**
 set wildignore+=**/.git/**
+set wildignore+=**/build/**
 set ignorecase
 set smartcase
 set incsearch
