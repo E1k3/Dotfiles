@@ -102,6 +102,8 @@ set cinoptions+=(0
 set tabstop=4
 set shiftwidth=4
 
+set mouse=
+
 let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'c', 'bash=sh']
 
 autocmd FileType python setlocal foldmethod=indent
