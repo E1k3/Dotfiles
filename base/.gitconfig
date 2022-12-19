@@ -5,15 +5,20 @@
 	email = e.g@wwu.de
 [core]
 	excludesfile = ~/.gitignore_global
-[merge]
-	tool = vimdiff
-	conflictstyle = diff3
 [diff]
-	tool = vimdiff
-
-[mergetool "vimdiff"]
-	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff
+[mergetool]
+	hideResolved = true
+	keepBackup = false
+	keepTemporaries = true
+	writeToTemp = true
+	prompt = true
 [pull]
 	rebase = false
 [init]
 	defaultBranch = master
+[mergetool "vimdiff"]
+	layout = (LOCAL,MERGED,REMOTE) + (LOCAL,BASE,REMOTE / MERGED)
+
