@@ -259,4 +259,4 @@ exec firefox
 exec audacious
 exec thunderbird
 exec dunst
-exec gammastep
+exec gammastep-indicator
