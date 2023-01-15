@@ -90,16 +90,16 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # workspace definitions
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7: "
-set $workspace8 "8: "
-set $workspace9 "9: "
-set $workspace10 "10: "
+set $workspace1 "01"
+set $workspace2 "02"
+set $workspace3 "03"
+set $workspace4 "04"
+set $workspace5 "05"
+set $workspace6 "06"
+set $workspace7 "07"
+set $workspace8 "08"
+set $workspace9 "09"
+set $workspace10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -221,21 +221,6 @@ client.unfocused		$bg_color_ia		$bg_color_ia		$text_color_ia	$bar_color
 client.focused_inactive	$bg_color_ia		$bg_color_ia		$text_color_ia	$bar_color
 client.urgent			$bg_color_urgent	$bg_color_urgent	$text_color		$bar_color
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar
-{
-        status_command "i3blocks -c $HOME/.config/i3/i3blocks.conf"
-
-        colors
-        {
-                background $bg_color
-                statusline $text_color
-        }
-		tray_output primary
-        font pango: Droid Sans Mono, FontAwesome 10
-}
-
 
 # rofi launcher
 bindsym $mod+d exec rofi -show run
@@ -244,6 +229,8 @@ bindsym $mod+p exec passmenu
 bindsym $mod+Shift+p exec passmenu --type
 
 # autostart
+# status bar
+exec_always --no-startup-id run_polybar
 # wallpaper
 exec_always --no-startup-id feh --no-fehbg --bg-scale $(xdg-user-dir PICTURES)/wallpaper.png
 # eye break reminder

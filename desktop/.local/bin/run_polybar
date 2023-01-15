@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+polybar-msg cmd quit
+
+primary="$(polybar -m | grep primary | cut -d : -f 1)"
+secondaries="$(polybar -m | grep -v primary | cut -d : -f 1)"
+
+MONITOR="$primary" polybar primary 2>&1 | tee -a /tmp/polybar_primary.log &|
+
+i=0
+for secondary in $secondaries; do
+	MONITOR="$secondary" polybar secondary 2>&1 | tee -a /tmp/polybar_$i.log &|;
+	((i+=1));
+done
