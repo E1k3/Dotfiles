@@ -91,6 +91,8 @@ alias sv="sudo -E nvim"
 alias svd="sv -d"
 alias nl="nl -b a -f a -h a"
 
+alias cvpass="PASSWORD_STORE_DIR=~/.cvpasswordstore pass"
+
 alias pm="podman"
 alias pmi="podman image"
 alias pmv="podman volume"
