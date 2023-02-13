@@ -36,12 +36,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " Faster navigation (like f/t but with 2 characters)
 Plug 'justinmk/vim-sneak'
-" Wiki & Journal
-Plug 'vimwiki/vimwiki'
 " Visual undo tree
 Plug 'mbbill/undotree'
 " Color code highlighting
 Plug 'chrisbra/Colorizer'
+
+" Note taking
+" Markdown syntax
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 
 call plug#end()
 
@@ -261,14 +264,3 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
-" Set vimwiki template settings
-let wiki={}
-let wiki.path='~/vimwiki/'
-let wiki.path_html='~/vimwiki/html/'
-let wiki.template_path='~/vimwiki/templates/'
-let wiki.template_default='default'
-let wiki.template_ext='.html'
-let wiki.auto_toc=1
-let wiki.nested_syntaxes={'c++':'cpp', 'php':'php', 'python':'python'}
-let g:vimwiki_list=[wiki]
