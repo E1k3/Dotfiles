@@ -142,6 +142,7 @@ nnoremap <Leader>e :Ex!<CR>
 let g:netrw_liststyle=3
 let g:netrw_preview=1
 nmap - <Plug>VinegarVerticalSplitUp
+nmap <Leader>- <Plug>VinegarUp
 
 " Asyncomplete config
 let g:asyncomplete_smart_completion=1
