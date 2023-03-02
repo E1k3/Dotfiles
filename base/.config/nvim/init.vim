@@ -223,16 +223,17 @@ if executable('yaml-language-server')
 endif
 
 " LSP config
+let g:lsp_semantic_enabled=1
 let g:lsp_diagnostics_echo_cursor=1
 let g:lsp_diagnostics_highlights_enabled=0
 let g:lsp_highlight_references_enabled=1
-let g:lsp_text_edit_enabled=0
 
 let g:lsp_diagnostics_signs_enabled=1
 let g:lsp_diagnostics_signs_error={'text': 'E'}
 let g:lsp_diagnostics_signs_warning={'text': 'W'}
 let g:lsp_diagnostics_signs_information={'text': 'I'}
 let g:lsp_diagnostics_signs_hint={'text': 'H'}
+let g:lsp_document_code_action_signs_hint={'text': 'A'}
 
 " LSP maps
 function! s:on_lsp_buffer_enabled() abort
