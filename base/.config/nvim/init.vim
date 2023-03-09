@@ -141,6 +141,8 @@ nnoremap <Leader>c :ColorToggle<CR>
 nnoremap <Leader>e :Ex!<CR>
 let g:netrw_liststyle=3
 let g:netrw_preview=1
+let g:netrw_altfile=1
+let g:netrw_keepj="keepj"
 nmap - <Plug>VinegarVerticalSplitUp
 nmap <Leader>- <Plug>VinegarUp
 
