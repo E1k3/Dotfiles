@@ -228,6 +228,7 @@ endif
 let g:lsp_diagnostics_echo_cursor=1
 let g:lsp_diagnostics_highlights_enabled=0
 let g:lsp_highlight_references_enabled=1
+let g:lsp_text_edit_enabled=0
 
 let g:lsp_diagnostics_signs_enabled=1
 let g:lsp_diagnostics_signs_error={'text': 'E'}
