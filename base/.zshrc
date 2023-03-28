@@ -66,7 +66,7 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 export QT_LOGGING_RULES="qt5ct.debug=false"
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp"
-export PAGER="less -j4"
+export PAGER="less -j4 -i"
 export PIP_REQUIRE_VIRTUALENV=true
 mkdir -p ~/.cache/genicam
 export GENICAM_CACHE_V3_1=~/.cache/genicam
@@ -77,7 +77,7 @@ export GENICAM_CACHE_V3_1=~/.cache/genicam
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias less="less -j4"
+alias less="less -j4 -i"
 alias mv="mv -i"
 alias grep="grep --colour"
 alias l="ls -lhH --color=auto --group-directories-first"
